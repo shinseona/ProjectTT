@@ -9,16 +9,29 @@ public class PlayerMove : MonoBehaviour
     private bool playerMoving;
     private Vector2 lastMove;
     [Header("이동속도 조절")]
-    [SerializeField] [Range(1f, 3000f)] 
-    private float moveSpeed = 1500f;
+    [SerializeField] [Range(1f, 20f)] 
+    private float moveSpeed = 2f;
+    GameObject gameManager;
+    UserDataBase udb;
+    
     private void Start()
     {
-        playerAnim = GetComponent<Animator>();
+        gameManager = GameObject.Find("GameManager");
+        udb = gameManager.transform.GetChild(1).GetComponent<UserDataBase>();
+        if (udb.PlayerGenderMale == true)
+        { 
+            playerAnim = transform.GetChild(0).GetComponent<Animator>();
+        }
+        else
+        {
+            playerAnim = transform.GetChild(1).GetComponent<Animator>();
+        }
     }
-    void Update()
+    void FixedUpdate()
     {
         playerMoving = false;
         //moveX = Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime;
+        //moveY = Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime;
         moveX = GetHorizontal(KeyCode.A,KeyCode.D) * moveSpeed * Time.deltaTime;
         moveY = GetVertical(KeyCode.W, KeyCode.S) * moveSpeed * Time.deltaTime;
         if (GetHorizontal(KeyCode.A, KeyCode.D)!=0)
@@ -46,7 +59,10 @@ public class PlayerMove : MonoBehaviour
     private int GetHorizontal(KeyCode k1, KeyCode k2)
     {
         int ReturnNum = 0;
-        if (Time.timeScale == 0f) return ReturnNum;
+        if (Mathf.Approximately(Time.timeScale, 0f))
+        {
+            return ReturnNum;
+        }
         if(Input.GetKey(k1))
         {
             ReturnNum = -1;
@@ -62,8 +78,10 @@ public class PlayerMove : MonoBehaviour
     {
         int ReturnNum = 0;
 
-        if (Time.timeScale == 0f) return ReturnNum;
-
+        if (Mathf.Approximately(Time.timeScale, 0f))
+        {
+            return ReturnNum;
+        }
         if (Input.GetKey(k1))
         {
             ReturnNum = 1;

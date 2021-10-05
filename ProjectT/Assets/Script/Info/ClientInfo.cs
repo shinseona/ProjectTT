@@ -6,24 +6,29 @@ using Steamworks;
 using UnityEngine.UI;
 using SteamImage = Steamworks.Data.Image;
 
+
 public class ClientInfo : MonoBehaviour
 {
     public Text clientUserName;
     public Text clientSteamId;
-
+    public UserDataBase UDB;
     [SerializeField] private ulong steamId;
     public RawImage clientAvater;
     // Start is called before the first frame update
     private async void Start()
     {
         GetClientInfo();
+        Debug.Log("UDBTest"+UDB.UserSteamID);
         clientAvater.texture = await GetClientAvater(steamId);
     }
-
+    public async void GetSteamImage(SteamId sID)
+    {
+        clientAvater.texture = await GetClientAvater(sID);
+    }
     private void GetClientInfo()
     {
+        steamId = UDB.UserSteamID;
         clientUserName.text = SteamClient.Name;
-        steamId = (ulong)SteamClient.SteamId;
         clientSteamId.text = steamId.ToString();
     }
 

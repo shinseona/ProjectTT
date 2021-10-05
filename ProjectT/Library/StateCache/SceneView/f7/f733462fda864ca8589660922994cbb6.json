@@ -1,1 +1,9 @@
-﻿{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audioPlay":false,"sceneViewState":{"m_AlwaysRefresh":false,"showFog":true,"showSkybox":true,"showFlares":true,"showImageEffects":true,"showParticleSystems":true,"showVisualEffectGraphs":true,"m_FxEnabled":true},"in2DMode":true,"pivot":{"x":55.104862213134769,"y":6.068253993988037,"z":-274.7964782714844},"rotation":{"x":0.0,"y":0.0,"z":0.0,"w":1.0},"size":153.2432403564453,"orthographic":true}
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+﻿{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audioPlay":false,"sceneViewState":{"m_AlwaysRefresh":false,"showFog":true,"showSkybox":true,"showFlares":true,"showImageEffects":true,"showParticleSystems":true,"showVisualEffectGraphs":true,"m_FxEnabled":true},"in2DMode":true,"pivot":{"x":-3695.41552734375,"y":-1197.80615234375,"z":-62.102108001708987},"rotation":{"x":0.0,"y":0.0,"z":0.0,"w":1.0},"size":341.4994812011719,"orthographic":true}
+=======
+﻿{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audioPlay":false,"sceneViewState":{"m_AlwaysRefresh":false,"showFog":true,"showSkybox":true,"showFlares":true,"showImageEffects":true,"showParticleSystems":true,"showVisualEffectGraphs":true,"m_FxEnabled":true},"in2DMode":true,"pivot":{"x":-24.707843780517579,"y":94.28534698486328,"z":532.695068359375},"rotation":{"x":0.0,"y":0.0,"z":0.0,"w":1.0},"size":673.164306640625,"orthographic":true}
+>>>>>>> Stashed changes
+=======
+﻿{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audioPlay":false,"sceneViewState":{"m_AlwaysRefresh":false,"showFog":true,"showSkybox":true,"showFlares":true,"showImageEffects":true,"showParticleSystems":true,"showVisualEffectGraphs":true,"m_FxEnabled":true},"in2DMode":true,"pivot":{"x":-24.707843780517579,"y":94.28534698486328,"z":532.695068359375},"rotation":{"x":0.0,"y":0.0,"z":0.0,"w":1.0},"size":673.164306640625,"orthographic":true}
+>>>>>>> Stashed changes

@@ -6,10 +6,12 @@ using Steamworks;
 
 public class SteamInfo : MonoBehaviour
 {
+    [SerializeField] private ulong steamId;
+    public UserDataBase udb;
+    public SteamIDCheckData steamidCheck;
     // Start is called before the first frame update
     private void Awake()
     {
-        DontDestroyOnLoad(target: this);
         try
         {
             Steamworks.SteamClient.Init(appid: 1737610);
@@ -19,6 +21,9 @@ public class SteamInfo : MonoBehaviour
         {
             Debug.Log(e);
         }
+        steamId = (ulong)SteamClient.SteamId;
+        udb.UserSteamID = steamId;
+        udb.Username = SteamClient.Name;
     }
     void Update()
     {

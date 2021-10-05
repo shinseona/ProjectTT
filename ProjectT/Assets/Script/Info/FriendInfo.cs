@@ -4,6 +4,7 @@ using UnityEngine;
 using Steamworks;
 public class FriendInfo : MonoBehaviour
 {
+    public ClientInfo c;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,7 +16,8 @@ public class FriendInfo : MonoBehaviour
         Debug.Log("친구 목록");
         foreach (Friend friend in SteamFriends.GetFriends())
         {
-            Debug.Log(friend);
+
+            Debug.Log(friend.Id);
         }
     }
 }
