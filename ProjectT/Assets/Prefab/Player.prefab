@@ -174,7 +174,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4343742278639650080}
   - component: {fileID: 4343742278639650081}
-  - component: {fileID: 4343742279527756044}
   - component: {fileID: 4343742279527756047}
   m_Layer: 0
   m_Name: Player
@@ -214,46 +213,6 @@ MonoBehaviour:
   female: {fileID: 4343742279849461039}
   male: {fileID: 4343742278664730387}
   vcam1: {fileID: 0}
---- !u!114 &4343742279527756044
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4343742278639650094}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7313cd7603f80bf44a51749c4fb00ccc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemInfoList: []
-  tileWallList:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  itemList: []
-  inventory: {fileID: 0}
 --- !u!114 &4343742279527756047
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -434,6 +393,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemDialogE: {fileID: 914239755}
   parentObj: {fileID: 0}
+  inventoryTetris: {fileID: 0}
 --- !u!1 &4343742279849461039
 GameObject:
   m_ObjectHideFlags: 0
@@ -601,3 +561,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemDialogE: {fileID: 1368563243}
   parentObj: {fileID: 0}
+  inventoryTetris: {fileID: 0}

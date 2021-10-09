@@ -1,0 +1,2 @@
+D:\Project\ProjectTT\ProjectT\obj\Debug\Unity.2D.Tilemap.Extras.Editor.csprojAssemblyReference.cache
+D:\Project\ProjectTT\ProjectT\obj\Debug\Unity.2D.Tilemap.Extras.Editor.csproj.CoreCompileInputs.cache

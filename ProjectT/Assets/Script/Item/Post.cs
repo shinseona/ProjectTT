@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class Post : ItemInfo
 {
     // Start is called before the first frame update

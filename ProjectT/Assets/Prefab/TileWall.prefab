@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 7738293486934643450}
   - component: {fileID: 4402821697766455776}
   - component: {fileID: 7848926908500204383}
-  - component: {fileID: -7815169130915461647}
+  - component: {fileID: 817730574}
   m_Layer: 0
   m_Name: TileWall
-  m_TagString: Untagged
+  m_TagString: InventoryTile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -72,7 +72,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
   m_Color: {r: 0.9150943, g: 0.7717871, b: 0.7717871, a: 1}
   m_FlipX: 0
@@ -97,16 +97,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!65 &-7815169130915461647
-BoxCollider:
+--- !u!114 &817730574
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8985586510783028711}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 0.2}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53ed0cfaa9f5b3b4bbca68bee5ae2a4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ItemList: []
+  itemID: 0
+  maxItem: 0
+  nowItem: 0
