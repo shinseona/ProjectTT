@@ -84,7 +84,7 @@ public class InventoryTetris : MonoBehaviour {
     }
 
 
-    public bool TryPlaceItem(ItemTetrisSO itemTetrisSO, Vector2Int placedObjectOrigin, PlacedObjectTypeSO.Dir dir) {
+    public PlacedObject TryPlaceItem(ItemTetrisSO itemTetrisSO, Vector2Int placedObjectOrigin, PlacedObjectTypeSO.Dir dir) {
         // Test Can Build
         List<Vector2Int> gridPositionList = itemTetrisSO.GetGridPositionList(placedObjectOrigin, dir);
         bool canPlace = true;
@@ -124,12 +124,11 @@ public class InventoryTetris : MonoBehaviour {
             }
 
             OnObjectPlaced?.Invoke(this, placedObject);
-
             // Object Placed!
-            return true;
+            return placedObject;
         } else {
             // Object CANNOT be placed!
-            return false;
+            return null;
         }
     }
 

@@ -9,26 +9,25 @@ public class PlayerChoice : MonoBehaviour
     UserDataBase udb;
     public GameObject female;
     public GameObject male;
-    public CinemachineVirtualCamera vcam1;
+    public MainPlayerCamera vcam;
     
 
     private void Start()
     {
         gameManager = GameObject.Find("GameManager");
         udb = gameManager.transform.GetChild(1).GetComponent<UserDataBase>();
+        vcam = gameObject.GetComponent<MainPlayerCamera>();
         if (udb.PlayerGenderMale == true)
         {
             male.SetActive(true);
             female.SetActive(false);
-            vcam1.Follow = male.transform;
-            vcam1.LookAt = male.transform;
+            vcam.ControlCam( male.transform);
         }
         else
         {
             female.SetActive(true);
             male.SetActive(false);
-            vcam1.Follow = female.transform;
-            vcam1.LookAt = female.transform;
+            vcam.ControlCam(female.transform);
         }
 
     }

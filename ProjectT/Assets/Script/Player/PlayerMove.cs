@@ -7,10 +7,15 @@ public class PlayerMove : MonoBehaviour
     private float moveX, moveY;
     private Animator playerAnim;
     private bool playerMoving;
-    private Vector2 lastMove;
+    public Vector2 lastMove;
+
     [Header("이동속도 조절")]
-    [SerializeField] [Range(1f, 20f)] 
-    private float moveSpeed = 2f;
+    [SerializeField] [Range(1f, 20f)]
+    private float playerMoveSpeed = 2f;
+
+
+    bool isPlayerMoveMode = true;
+    public bool IsPlayerMoveMode { get => isPlayerMoveMode; set => isPlayerMoveMode = value; }
     GameObject gameManager;
     UserDataBase udb;
     
@@ -18,32 +23,38 @@ public class PlayerMove : MonoBehaviour
     {
         gameManager = GameObject.Find("GameManager");
         udb = gameManager.transform.GetChild(1).GetComponent<UserDataBase>();
-        if (udb.PlayerGenderMale == true)
-        { 
-            playerAnim = transform.GetChild(0).GetComponent<Animator>();
-        }
-        else
-        {
-            playerAnim = transform.GetChild(1).GetComponent<Animator>();
-        }
+        playerAnim = transform.GetComponent<Animator>();
+        //if (udb.PlayerGenderMale == true)
+        //{ 
+        //    playerAnim = transform.GetChild(0).GetComponent<Animator>();
+        //}
+        //else if(udb.PlayerGenderMale == false)
+        //{
+        //    playerAnim = transform.GetChild(1).GetComponent<Animator>();
+        //}
     }
     void FixedUpdate()
+    {
+        PlayerMoveControl();
+    }
+
+    private void PlayerMoveControl()
     {
         playerMoving = false;
         //moveX = Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime;
         //moveY = Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime;
-        moveX = GetHorizontal(KeyCode.A,KeyCode.D) * moveSpeed * Time.deltaTime;
-        moveY = GetVertical(KeyCode.W, KeyCode.S) * moveSpeed * Time.deltaTime;
-        if (GetHorizontal(KeyCode.A, KeyCode.D)!=0)
+        moveX = GetHorizontal(KeyCode.A, KeyCode.D) * playerMoveSpeed * Time.deltaTime;
+        moveY = GetVertical(KeyCode.W, KeyCode.S) * playerMoveSpeed * Time.deltaTime;
+        if (GetHorizontal(KeyCode.A, KeyCode.D) != 0)
         {
-            transform.position = new Vector2(transform.position.x+moveX, transform.position.y);
+            transform.position = new Vector2(transform.position.x + moveX, transform.position.y);
             playerMoving = true;
             lastMove = new Vector2(GetHorizontal(KeyCode.A, KeyCode.D), 0f);
         }
 
-        if (GetVertical(KeyCode.W, KeyCode.S)!=0)
+        if (GetVertical(KeyCode.W, KeyCode.S) != 0)
         {
-            transform.position = new Vector2(transform.position.x, transform.position.y+moveY);
+            transform.position = new Vector2(transform.position.x, transform.position.y + moveY);
             playerMoving = true;
             lastMove = new Vector2(0f, GetVertical(KeyCode.W, KeyCode.S));
         }
@@ -63,7 +74,7 @@ public class PlayerMove : MonoBehaviour
         {
             return ReturnNum;
         }
-        if(Input.GetKey(k1))
+        if (Input.GetKey(k1))
         {
             ReturnNum = -1;
         }
