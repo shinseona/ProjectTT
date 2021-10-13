@@ -1430,7 +1430,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: fe781ed5144fb8247bae753826c50b2b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a991c3fe90bed4048b43ad943f9c5af6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3843,7 +3843,7 @@ GameObject:
   - component: {fileID: 264552886}
   - component: {fileID: 264552887}
   m_Layer: 5
-  m_Name: InventoryTetris
+  m_Name: MotorcycleInventoryTetris
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4874,6 +4874,7 @@ MonoBehaviour:
   inventoryTetrisList:
   - {fileID: 264552886}
   - {fileID: 1592917637}
+  playerInventory: {fileID: 4343742279527756043}
 --- !u!4 &425244058
 Transform:
   m_ObjectHideFlags: 0
@@ -13108,7 +13109,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: fe781ed5144fb8247bae753826c50b2b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a991c3fe90bed4048b43ad943f9c5af6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -16078,7 +16079,7 @@ Transform:
   m_GameObject: {fileID: 1733073298}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 3.0833755, y: -0.574617, z: 0.2218992}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 192934860}
   m_Father: {fileID: 2071255864}
@@ -16684,7 +16685,7 @@ Transform:
   m_GameObject: {fileID: 1823759566}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.5155529, y: -0.5360571, z: 0.2218992}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2107986626}
   m_Father: {fileID: 2071255864}
@@ -18301,7 +18302,7 @@ Transform:
   m_GameObject: {fileID: 2053277612}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1.3931645, y: -0.52320385, z: 0.2218992}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 462436615}
   m_Father: {fileID: 2071255864}
@@ -19850,7 +19851,7 @@ Transform:
   m_GameObject: {fileID: 2135997013}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -2.6314, y: -0.63314295, z: 0.2218992}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 617607393}
   m_Father: {fileID: 2071255864}
@@ -20243,4 +20244,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6988cfd04d4979441804f8ef76227522, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ItemList: []

@@ -12,13 +12,12 @@ public class InventoryTetrisManualPlacement : MonoBehaviour {
     public event EventHandler OnObjectPlaced;
     [SerializeField] private Canvas canvas = null;
     [SerializeField] private List<PlacedObjectTypeSO> placedObjectTypeSOList = null;
-
     private PlacedObjectTypeSO placedObjectTypeSO;
     private PlacedObjectTypeSO.Dir dir;
     private InventoryTetris inventoryTetris;
     private RectTransform canvasRectTransform;
     private RectTransform itemContainer;
-    private PlayerInventoryInfo playerInvenInfo;
+   
 
 
     private void Awake() {
@@ -37,10 +36,6 @@ public class InventoryTetrisManualPlacement : MonoBehaviour {
         }
 
         itemContainer = transform.Find("ItemContainer").GetComponent<RectTransform>();
-    }
-    private void Start()
-    {
-        playerInvenInfo = GameObject.Find("Player").GetComponent<PlayerInventoryInfo>();
     }
     private void Update() {
 
@@ -87,8 +82,9 @@ public class InventoryTetrisManualPlacement : MonoBehaviour {
                 if (tryPlaceItem != null)
                 {
                     OnObjectPlaced?.Invoke(this, EventArgs.Empty);
-                    ItemTetrisSO itemSo = placedObjectTypeSOList[_itemID] as ItemTetrisSO;
-                    playerInvenInfo.ItemList.Add(tryPlaceItem.gameObject, itemSo);
+                    //ItemTetrisSO itemSo = placedObjectTypeSOList[_itemID] as ItemTetrisSO;
+                    //playerInvenInfo.ItemList.Add(tryPlaceItem.gameObject, itemSo);
+                    
                     getItem = true;
                    
                     break;

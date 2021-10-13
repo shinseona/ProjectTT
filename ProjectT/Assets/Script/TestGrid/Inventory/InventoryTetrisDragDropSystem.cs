@@ -16,7 +16,7 @@ public class InventoryTetrisDragDropSystem : MonoBehaviour {
     private Vector2Int mouseDragGridPositionOffset;
     private Vector2 mouseDragAnchoredPositionOffset;
     private PlacedObjectTypeSO.Dir dir;
-
+    [SerializeField] private PlayerInventoryInfo playerInventory;
 
     private void Awake() {
         Instance = this;
@@ -109,9 +109,27 @@ public class InventoryTetrisDragDropSystem : MonoBehaviour {
             Vector2Int placedObjectOrigin = toInventoryTetris.GetGridPosition(anchoredPosition);
             placedObjectOrigin = placedObjectOrigin - mouseDragGridPositionOffset;
 
-            bool tryPlaceItem = toInventoryTetris.TryPlaceItem(placedObject.GetPlacedObjectTypeSO() as ItemTetrisSO, placedObjectOrigin, dir);
+            PlacedObject tryPlaceItem = toInventoryTetris.TryPlaceItem(placedObject.GetPlacedObjectTypeSO() as ItemTetrisSO, placedObjectOrigin, dir);
 
             if (tryPlaceItem) {
+                if (toInventoryTetris.name == "MotorcycleInventoryTetris")
+                {
+                    bool _cInItemList = true;
+                    foreach(var a in playerInventory.ItemList.Keys)
+                    {
+                        Debug.Log(playerInventory.ItemList.Count);
+                        if(a == tryPlaceItem.gameObject)
+                        {
+                            _cInItemList = false;
+                        }
+                    }
+                    if (_cInItemList)
+                    {
+                        ItemTetrisSO itemSo = placedObject.GetPlacedObjectTypeSO() as ItemTetrisSO;
+                        playerInventory.ItemList.Add(tryPlaceItem.gameObject, itemSo);
+                        Debug.Log("aa");
+                    }
+                }
                 // Item placed!
             } else {
                 // Cannot drop item here!
