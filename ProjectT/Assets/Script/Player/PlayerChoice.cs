@@ -9,7 +9,10 @@ public class PlayerChoice : MonoBehaviour
     UserDataBase udb;
     public GameObject female;
     public GameObject male;
-    public MainPlayerCamera vcam;
+    public GameObject MotoF;
+    public GameObject MotoM;
+
+    private MainPlayerCamera vcam;
     
 
     private void Start()
@@ -17,24 +20,37 @@ public class PlayerChoice : MonoBehaviour
         gameManager = GameObject.Find("GameManager");
         udb = gameManager.transform.GetChild(1).GetComponent<UserDataBase>();
         vcam = gameObject.GetComponent<MainPlayerCamera>();
-        if (udb.PlayerGenderMale == true)
+        if (!udb.PlayerisMotorcycle)
         {
-            male.SetActive(true);
-            female.SetActive(false);
-            vcam.ControlCam( male.transform);
+            if (udb.PlayerGenderMale == true)
+            {
+                male.SetActive(true);
+                female.SetActive(false);
+                vcam.ControlCam(male.transform);
+            }
+            else
+            {
+                female.SetActive(true);
+                male.SetActive(false);
+                vcam.ControlCam(female.transform);
+            }
         }
         else
         {
-            female.SetActive(true);
-            male.SetActive(false);
-            vcam.ControlCam(female.transform);
+            if (udb.PlayerGenderMale == true)
+            {
+                MotoM.SetActive(true);
+                MotoF.SetActive(false);
+                vcam.ControlCam(MotoM.transform);
+            }
+            else
+            {
+                MotoF.SetActive(true);
+                MotoM.SetActive(false);
+                vcam.ControlCam(MotoF.transform);
+            }
         }
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

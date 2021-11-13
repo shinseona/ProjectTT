@@ -8,6 +8,8 @@ TagManager:
   - Item
   - Motorcycle
   - MotorcycleInventory
+  - Enemy
+  - Addr
   layers:
   - Default
   - TransparentFX
@@ -16,8 +18,8 @@ TagManager:
   - Water
   - UI
   - Wall
-  - 
-  - 
+  - Item
+  - Map
   - 
   - 
   - 

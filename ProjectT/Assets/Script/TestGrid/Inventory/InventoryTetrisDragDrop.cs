@@ -14,6 +14,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using CodeMonkey.Utils;
 
 public class InventoryTetrisDragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler {
 
@@ -23,12 +24,14 @@ public class InventoryTetrisDragDrop : MonoBehaviour, IPointerDownHandler, IBegi
 
     private InventoryTetris inventoryTetris;
     private PlacedObject placedObject;
-
+    private ItemInfo itemInfo;
+    public bool isCreatItem;
     private void Awake() {
         canvas = GetComponentInParent<Canvas>();
         rectTransform = GetComponent<RectTransform>();
         canvasGroup = GetComponent<CanvasGroup>();
         placedObject = GetComponent<PlacedObject>();
+        itemInfo = GetComponent<ItemInfo>();
     }
 
     public void Setup(InventoryTetris inventoryTetris) {
@@ -37,6 +40,7 @@ public class InventoryTetrisDragDrop : MonoBehaviour, IPointerDownHandler, IBegi
 
     public void OnBeginDrag(PointerEventData eventData) {
         //Debug.Log("OnBeginDrag");
+        if (!Input.GetMouseButton(0)) return;
         canvasGroup.alpha = .7f;
         canvasGroup.blocksRaycasts = false;
 
@@ -44,12 +48,15 @@ public class InventoryTetrisDragDrop : MonoBehaviour, IPointerDownHandler, IBegi
         InventoryTetrisDragDropSystem.Instance.StartedDragging(inventoryTetris, placedObject);
     }
 
-    public void OnDrag(PointerEventData eventData) {
+    public void OnDrag(PointerEventData eventData)
+    {
         //Debug.Log("OnDrag");
         //rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
     }
 
-    public void OnEndDrag(PointerEventData eventData) {
+    public void OnEndDrag(PointerEventData eventData)
+    {
+        if (!Input.GetMouseButtonUp(0)) return;
         //Debug.Log("OnEndDrag");
         canvasGroup.alpha = 1f;
         canvasGroup.blocksRaycasts = true;
@@ -57,8 +64,14 @@ public class InventoryTetrisDragDrop : MonoBehaviour, IPointerDownHandler, IBegi
         InventoryTetrisDragDropSystem.Instance.StoppedDragging(inventoryTetris, placedObject);
     }
 
-    public void OnPointerDown(PointerEventData eventData) {
-        //Debug.Log("OnPointerDown");
+    public void OnPointerDown(PointerEventData eventData)
+    {
+        ItemTetrisSO itemSo = itemInfo.ItemSo;
+        if (!StepManager.ToolActive_static())
+        {
+            if (!Input.GetMouseButtonDown(1)) return;
+            StepManager.ShowTool_static(itemSo.itemname, itemInfo.ShippingAddress, itemInfo.NPCName, itemSo.weight + "kg");
+        }
     }
 
 }

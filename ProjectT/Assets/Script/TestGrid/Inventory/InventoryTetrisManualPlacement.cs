@@ -67,34 +67,37 @@ public class InventoryTetrisManualPlacement : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Alpha0)) { DeselectObjectType(); }
 
     }
-    public void GetItem(int _itemID)
+
+    public PlacedObject GetItem(ItemInfo _itemInfo)
     {
 
-        Vector2Int placedObjectOrigin = new Vector2Int(0, 9);
-        bool getItem = false;
-        int n = 0;
-        for (int i = placedObjectOrigin.y; i   > -1; i--)
+        PlacedObject tryPlaceItem =
+            inventoryTetris.TryPlaceItem(_itemInfo.ItemSo, _itemInfo.SavePoint, dir);
+        Debug.Log(tryPlaceItem.name);
+        var a = tryPlaceItem.gameObject.GetComponent<ItemInfo>();
+            a.NPCName= _itemInfo.NPCName;
+            a.ShippingAddress = _itemInfo.ShippingAddress;
+
+        if (tryPlaceItem != null)
         {
-            for (int j = placedObjectOrigin.x ; j< 10; j++)
-            {
-                Vector2Int poo = new Vector2Int(j, i);
-                PlacedObject tryPlaceItem = inventoryTetris.TryPlaceItem(placedObjectTypeSOList[_itemID] as ItemTetrisSO, poo, dir);
-                if (tryPlaceItem != null)
-                {
-                    OnObjectPlaced?.Invoke(this, EventArgs.Empty);
-                    //ItemTetrisSO itemSo = placedObjectTypeSOList[_itemID] as ItemTetrisSO;
-                    //playerInvenInfo.ItemList.Add(tryPlaceItem.gameObject, itemSo);
-                    
-                    getItem = true;
-                   
-                    break;
-                }
-            }
-            if(getItem)
-            {
-                break;
-            }
+            OnObjectPlaced?.Invoke(this, EventArgs.Empty);
+            //ItemTetrisSO itemSo = placedObjectTypeSOList[_itemID] as ItemTetrisSO;
+            //playerInvenInfo.ItemList.Add(tryPlaceItem.gameObject, itemSo);
+
         }
+
+        return tryPlaceItem;
+    }
+
+    public PlacedObject CreatItem(Vector2Int _itemPoint, ItemTetrisSO itemSo)
+    {
+        PlacedObject tryPlaceItem = inventoryTetris.TryPlaceItem(itemSo, _itemPoint, dir);
+        if (tryPlaceItem != null)
+        {
+            OnObjectPlaced?.Invoke(this, EventArgs.Empty);
+            return tryPlaceItem;
+        }
+        return null;
     }
     private void DeselectObjectType() {
         placedObjectTypeSO = null; RefreshSelectedObjectType();

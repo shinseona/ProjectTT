@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using CodeMonkey.Utils;
 
-public class InventoryTetrisDragDropSystem : MonoBehaviour {
+public class InventoryTetrisDragDropSystem : MonoBehaviour
+{
 
     public static InventoryTetrisDragDropSystem Instance { get; private set; }
 
@@ -17,30 +18,42 @@ public class InventoryTetrisDragDropSystem : MonoBehaviour {
     private Vector2 mouseDragAnchoredPositionOffset;
     private PlacedObjectTypeSO.Dir dir;
     [SerializeField] private PlayerInventoryInfo playerInventory;
+    [SerializeField]
+    private ItemCreater itemCreater;
 
-    private void Awake() {
+    private ItemTetrisSO itemSo;
+    private string ToolTip= "놓을 수 없습니다.";
+    private void Awake()
+    {
         Instance = this;
     }
 
-    private void Start() {
-        foreach (InventoryTetris inventoryTetris in inventoryTetrisList) {
-            inventoryTetris.OnObjectPlaced += (object sender, PlacedObject placedObject) => {
+    private void Start()
+    {
+        playerInventory = GameObject.Find("ItemInfo").gameObject.GetComponent<PlayerInventoryInfo>(); 
+        foreach (InventoryTetris inventoryTetris in inventoryTetrisList)
+        {
+            inventoryTetris.OnObjectPlaced += (object sender, PlacedObject placedObject) =>
+            {
             };
         }
     }
 
-    private void Update() {
-        if (Input.GetKeyDown(KeyCode.R)) {
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
             dir = PlacedObjectTypeSO.GetNextDir(dir);
         }
 
-        if (draggingPlacedObject != null) {
+        if (draggingPlacedObject != null)
+        {
             // Calculate target position to move the dragged item
-            RectTransformUtility.ScreenPointToLocalPointInRectangle(draggingInventoryTetris.GetItemContainer(), Input.mousePosition, null, out Vector2 targetPosition);
+            RectTransformUtility.ScreenPointToLocalPointInRectangle(draggingInventoryTetris.GetItemContainer(), Input.mousePosition, null, out var targetPosition);
             targetPosition += new Vector2(-mouseDragAnchoredPositionOffset.x, -mouseDragAnchoredPositionOffset.y);
 
             // Apply rotation offset to target position
-            Vector2Int rotationOffset = draggingPlacedObject.GetPlacedObjectTypeSO().GetRotationOffset(dir);
+            var rotationOffset = draggingPlacedObject.GetPlacedObjectTypeSO().GetRotationOffset(dir);
             targetPosition += new Vector2(rotationOffset.x, rotationOffset.y) * draggingInventoryTetris.GetGrid().GetCellSize();
 
             // Snap position
@@ -54,7 +67,8 @@ public class InventoryTetrisDragDropSystem : MonoBehaviour {
         }
     }
 
-    public void StartedDragging(InventoryTetris inventoryTetris, PlacedObject placedObject) {
+    public void StartedDragging(InventoryTetris inventoryTetris, PlacedObject placedObject)
+    {
         // Started Dragging
         draggingInventoryTetris = inventoryTetris;
         draggingPlacedObject = placedObject;
@@ -76,80 +90,147 @@ public class InventoryTetrisDragDropSystem : MonoBehaviour {
         // Apply rotation offset to drag anchored position offset
         Vector2Int rotationOffset = draggingPlacedObject.GetPlacedObjectTypeSO().GetRotationOffset(dir);
         mouseDragAnchoredPositionOffset += new Vector2(rotationOffset.x, rotationOffset.y) * draggingInventoryTetris.GetGrid().GetCellSize();
+
     }
 
-    public void StoppedDragging(InventoryTetris fromInventoryTetris, PlacedObject placedObject) {
+    public void StoppedDragging(InventoryTetris fromInventoryTetris, PlacedObject placedObject)
+    {
         draggingInventoryTetris = null;
         draggingPlacedObject = null;
-
         Cursor.visible = true;
+        var tempiteminfo = placedObject.gameObject.GetComponent<ItemInfo>();
 
         // Remove item from its current inventory
         fromInventoryTetris.RemoveItemAt(placedObject.GetGridPosition());
-
         InventoryTetris toInventoryTetris = null;
 
         // Find out which InventoryTetris is under the mouse position
-        foreach (InventoryTetris inventoryTetris in inventoryTetrisList) {
+        foreach (InventoryTetris inventoryTetris in inventoryTetrisList)
+        {
             Vector3 screenPoint = Input.mousePosition;
             RectTransformUtility.ScreenPointToLocalPointInRectangle(inventoryTetris.GetItemContainer(), screenPoint, null, out Vector2 anchoredPosition);
             Vector2Int placedObjectOrigin = inventoryTetris.GetGridPosition(anchoredPosition);
             placedObjectOrigin = placedObjectOrigin - mouseDragGridPositionOffset;
 
-            if (inventoryTetris.IsValidGridPosition(placedObjectOrigin)) {
+            if (inventoryTetris.IsValidGridPosition(placedObjectOrigin))
+            {
                 toInventoryTetris = inventoryTetris;
                 break;
             }
         }
-
+        itemSo = placedObject.GetComponent<ItemInfo>().ItemSo;
         // Check if it's on top of a InventoryTetris
-        if (toInventoryTetris != null) {
+        if (toInventoryTetris != null)
+        {
             Vector3 screenPoint = Input.mousePosition;
             RectTransformUtility.ScreenPointToLocalPointInRectangle(toInventoryTetris.GetItemContainer(), screenPoint, null, out Vector2 anchoredPosition);
             Vector2Int placedObjectOrigin = toInventoryTetris.GetGridPosition(anchoredPosition);
             placedObjectOrigin = placedObjectOrigin - mouseDragGridPositionOffset;
 
             PlacedObject tryPlaceItem = toInventoryTetris.TryPlaceItem(placedObject.GetPlacedObjectTypeSO() as ItemTetrisSO, placedObjectOrigin, dir);
-
-            if (tryPlaceItem) {
-                if (toInventoryTetris.name == "MotorcycleInventoryTetris")
+            var iteminfo =tryPlaceItem?.gameObject.GetComponent<ItemInfo>();
+            if (iteminfo != null)
+            {
+                iteminfo.NPCName = tempiteminfo.NPCName;
+                iteminfo.ShippingAddress = tempiteminfo.ShippingAddress;
+                    
+            }
+            //ItemTetrisSO itemSo = placedObject.GetPlacedObjectTypeSO() as ItemTetrisSO;
+            itemSo = placedObject.GetComponent<ItemInfo>().ItemSo;
+            if (tryPlaceItem)
+            {
+                switch (fromInventoryTetris.name)
                 {
-                    bool _cInItemList = true;
-                    foreach(var a in playerInventory.ItemList.Keys)
-                    {
-                        Debug.Log(playerInventory.ItemList.Count);
-                        if(a == tryPlaceItem.gameObject)
+                    case "InventoryTetris":
+                        switch (toInventoryTetris.name)
                         {
-                            _cInItemList = false;
+                            case "MotorcycleInventoryTetris":
+                                iteminfo.SavePoint = placedObjectOrigin; 
+                                playerInventory.ItemInit(iteminfo);
+                                break;
+                            case "CreateInventoryTetris":
+                                TooltipCanvas.ShowTooltip_Static(ToolTip);
+                                FunctionTimer.Create(() => { TooltipCanvas.HideTooltip_Static(); }, 2f, "HideTooltip", true, true);
+
+                                // Drop on original position
+                                PlacedObject fromInventoryTryPlaceItem = fromInventoryTetris.TryPlaceItem(itemSo, placedObject.GetGridPosition(), placedObject.GetDir());
+                                var fromInventoryIteminfo = fromInventoryTryPlaceItem.gameObject.GetComponent<ItemInfo>();
+                                fromInventoryIteminfo.NPCName = tempiteminfo.NPCName;
+                                fromInventoryIteminfo.ShippingAddress = tempiteminfo.ShippingAddress;
+                                break;
                         }
-                    }
-                    if (_cInItemList)
-                    {
-                        ItemTetrisSO itemSo = placedObject.GetPlacedObjectTypeSO() as ItemTetrisSO;
-                        playerInventory.ItemList.Add(tryPlaceItem.gameObject, itemSo);
-                        Debug.Log("aa");
-                    }
+                        break;
+                    case "MotorcycleInventoryTetris":
+                        switch (toInventoryTetris.name)
+                        {
+                            case "InventoryTetris":
+                                playerInventory.ItemRemove(tempiteminfo);
+                                break;
+                            case "CreateInventoryTetris":
+                                TooltipCanvas.ShowTooltip_Static(ToolTip);
+                                FunctionTimer.Create(() => { TooltipCanvas.HideTooltip_Static(); }, 2f, "HideTooltip", true, true);
+
+                                // Drop on original position
+                                PlacedObject fromInventoryTryPlaceItem = fromInventoryTetris.TryPlaceItem(itemSo, placedObject.GetGridPosition(), placedObject.GetDir());
+                                var fromInventoryIteminfo = fromInventoryTryPlaceItem.gameObject.GetComponent<ItemInfo>();
+                                fromInventoryIteminfo.NPCName = tempiteminfo.NPCName;
+                                fromInventoryIteminfo.ShippingAddress = tempiteminfo.ShippingAddress;
+                                break;
+                            case "MotorcycleInventoryTetris":
+                                playerInventory.CItem(tempiteminfo, iteminfo,placedObjectOrigin);
+                               
+                                break;
+                                
+                        }
+
+                        break;
+                    case "CreateInventoryTetris":
+                        switch (toInventoryTetris.name)
+                        {
+                            case "MotorcycleInventoryTetris":
+                                playerInventory.ItemInit(iteminfo);
+                                iteminfo.SavePoint = placedObjectOrigin;
+                                itemCreater.CreatItem();
+                                break;
+                            case "InventoryTetris":
+                                itemCreater.CreatItem();
+                                break;
+                        }
+
+                        break;
                 }
-                // Item placed!
-            } else {
+            }
+            // Item placed!
+
+            else
+            {
                 // Cannot drop item here!
-                TooltipCanvas.ShowTooltip_Static("Cannot Drop Item Here!");
+                TooltipCanvas.ShowTooltip_Static(ToolTip);
                 FunctionTimer.Create(() => { TooltipCanvas.HideTooltip_Static(); }, 2f, "HideTooltip", true, true);
 
                 // Drop on original position
-                fromInventoryTetris.TryPlaceItem(placedObject.GetPlacedObjectTypeSO() as ItemTetrisSO, placedObject.GetGridPosition(), placedObject.GetDir());
+                PlacedObject fromInventoryTryPlaceItem = fromInventoryTetris.TryPlaceItem(itemSo, placedObject.GetGridPosition(), placedObject.GetDir());
+                var fromInventoryIteminfo = fromInventoryTryPlaceItem.gameObject.GetComponent<ItemInfo>();
+                fromInventoryIteminfo.NPCName = tempiteminfo.NPCName;
+                fromInventoryIteminfo.ShippingAddress = tempiteminfo.ShippingAddress;
             }
-        } else {
+        }
+        else
+        {
             // Not on top of any Inventory Tetris!
 
             // Cannot drop item here!
-            TooltipCanvas.ShowTooltip_Static("Cannot Drop Item Here!");
+            TooltipCanvas.ShowTooltip_Static(ToolTip);
             FunctionTimer.Create(() => { TooltipCanvas.HideTooltip_Static(); }, 2f, "HideTooltip", true, true);
 
             // Drop on original position
-            fromInventoryTetris.TryPlaceItem(placedObject.GetPlacedObjectTypeSO() as ItemTetrisSO, placedObject.GetGridPosition(), placedObject.GetDir());
+            PlacedObject fromInventoryTryPlaceItem = fromInventoryTetris.TryPlaceItem(itemSo, placedObject.GetGridPosition(), placedObject.GetDir());
+            var fromInventoryIteminfo = fromInventoryTryPlaceItem.gameObject.GetComponent<ItemInfo>();
+            fromInventoryIteminfo.NPCName = tempiteminfo.NPCName;
+            fromInventoryIteminfo.ShippingAddress = tempiteminfo.ShippingAddress;
         }
     }
-
-
 }
+
+
+

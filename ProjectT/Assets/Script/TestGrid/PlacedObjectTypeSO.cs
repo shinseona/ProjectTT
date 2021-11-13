@@ -48,12 +48,13 @@ public class PlacedObjectTypeSO : ScriptableObject {
         Right,
     }
 
-    public string nameString;
+    public string itemname;
     public Transform prefab;
     public Transform visual;
     public int width;
     public int height;
-
+    public int weight;
+    public Vector2Int creatItemPoint;
 
     public int GetRotationAngle(Dir dir) {
         switch (dir) {

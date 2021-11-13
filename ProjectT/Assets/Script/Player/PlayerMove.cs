@@ -7,14 +7,14 @@ public class PlayerMove : MonoBehaviour
     private float moveX, moveY;
     private Animator playerAnim;
     private bool playerMoving;
-    public Vector2 lastMove;
+    public Vector2Int lastMove;
 
     [Header("이동속도 조절")]
     [SerializeField] [Range(1f, 20f)]
     private float playerMoveSpeed = 2f;
 
 
-    bool isPlayerMoveMode = true;
+    private bool isPlayerMoveMode = true;
     public bool IsPlayerMoveMode { get => isPlayerMoveMode; set => isPlayerMoveMode = value; }
     GameObject gameManager;
     UserDataBase udb;
@@ -49,14 +49,14 @@ public class PlayerMove : MonoBehaviour
         {
             transform.position = new Vector2(transform.position.x + moveX, transform.position.y);
             playerMoving = true;
-            lastMove = new Vector2(GetHorizontal(KeyCode.A, KeyCode.D), 0f);
+            lastMove = new Vector2Int(GetHorizontal(KeyCode.A, KeyCode.D), 0);
         }
 
         if (GetVertical(KeyCode.W, KeyCode.S) != 0)
         {
             transform.position = new Vector2(transform.position.x, transform.position.y + moveY);
             playerMoving = true;
-            lastMove = new Vector2(0f, GetVertical(KeyCode.W, KeyCode.S));
+            lastMove = new Vector2Int(0, GetVertical(KeyCode.W, KeyCode.S));
         }
 
         playerAnim.SetBool("PlayerMoving", playerMoving);

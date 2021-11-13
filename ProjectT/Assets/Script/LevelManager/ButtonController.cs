@@ -43,7 +43,8 @@ public class ButtonController : MonoBehaviour
             Opening();
         }
 
-        if (SceneManager.GetActiveScene().name == "step1")
+        if (SceneManager.GetActiveScene().name == "step1"||
+            SceneManager.GetActiveScene().name == "MainGame")
         {
             StepOne();
         }

@@ -4,18 +4,25 @@ using UnityEngine;
 
 public class GetMotorcycle : MonoBehaviour
 {
-    [SerializeField]
-    private List<GameObject> motorcycleView;
-    [SerializeField]
-    private GameObject playerMotorcycle;
+    [SerializeField] private List<GameObject> motorcycleView;
+    [SerializeField] private GameObject playerMotorcycle;
     private GameObject MotorcycleObj;
     public GameObject itemDialogE;
     MainPlayerCamera vcam;
+    public bool resetMotor = true;
+    
+    GameObject gameManager;
+    UserDataBase udb;
 
     private void Start()
     {
+        gameManager = GameObject.Find("GameManager");
+        udb = gameManager.transform.GetChild(1).GetComponent<UserDataBase>();
+
         vcam = transform.parent.gameObject.GetComponent<MainPlayerCamera>();
+        resetMotor = true;
     }
+
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.tag == "Motorcycle")
@@ -24,14 +31,21 @@ public class GetMotorcycle : MonoBehaviour
             {
                 ItmeDialogOn();
             }
+
             MotorcycleInfo motorcycle = collision.transform.parent.GetComponent<MotorcycleInfo>();
             MotorcycleObj = motorcycleView[motorcycle.motorcycleNum];
-            if (Input.GetKey(KeyCode.E))
+
+            if (!resetMotor)
+            {
+                return;
+            }
+            else if (Input.GetKey(KeyCode.E))
             {
                 GetMotocycleForPlayer(MotorcycleView(MotorcycleObj.name), collision);
             }
         }
     }
+
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.tag == "Motorcycle")
@@ -42,36 +56,53 @@ public class GetMotorcycle : MonoBehaviour
             }
         }
     }
+
     public void ItmeDialogOn()
     {
         itemDialogE.SetActive(true);
     }
+
     public void ItmeDialogOff()
     {
         itemDialogE.SetActive(false);
     }
+
     private Vector2Int MotorcycleView(string viewName)
     {
-        switch(viewName)
+        return viewName switch
         {
-            case "Motorcycle_front":
-                return Vector2Int.down;
-            case "Motorcycle_Back":
-                return Vector2Int.up;
-            case "Motorcycle_Laft":
-                return Vector2Int.left;
-            case "Motorcycle_Right":
-                return Vector2Int.right;
-        }
-        return Vector2Int.zero;
+            "Motorcycle_front" => Vector2Int.down,
+            "Motorcycle_Back" => Vector2Int.up,
+            "Motorcycle_Laft" => Vector2Int.left,
+            "Motorcycle_Right" => Vector2Int.right,
+            _ => Vector2Int.zero
+        };
     }
+
     private void GetMotocycleForPlayer(Vector2Int _motorcycleView, Collider2D collision)
     {
+        udb.PlayerisMotorcycle = true;
         playerMotorcycle.transform.position = collision.transform.position;
         playerMotorcycle.SetActive(true);
         playerMotorcycle.gameObject.GetComponent<PlayerMove>().lastMove = _motorcycleView;
+        var getPlayer = playerMotorcycle.gameObject.GetComponent<GetPlayer>();
+        getPlayer.resetMotor = false;
+        getPlayer.GetMotorcycleResetTiem();
         vcam.ControlCam(playerMotorcycle.transform);
+        resetMotor = false;
         gameObject.SetActive(false);
         collision.transform.parent.gameObject.SetActive(false);
+    }
+
+    public void GetPlayerResetTiem()
+    {
+        StartCoroutine(ResetTiem());
+    }
+
+    private IEnumerator ResetTiem()
+    {
+        yield return new WaitForSeconds(1.0f);
+        resetMotor = true;
+        Debug.Log("¾Ó");
     }
 }

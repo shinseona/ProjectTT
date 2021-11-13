@@ -33,7 +33,6 @@ public class SteamInfo : MonoBehaviour
             SteamClient.Shutdown();
             ExitGame();
         }
-
     }
     public void ExitGame()
     {

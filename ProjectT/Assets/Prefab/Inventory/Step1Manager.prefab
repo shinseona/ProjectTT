@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &243718612319420305
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 243718612319420307}
+  - component: {fileID: 243718612319420304}
+  - component: {fileID: 243718612319420306}
+  m_Layer: 0
+  m_Name: Step1Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &243718612319420307
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 243718612319420305}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 52.10307, y: 4.0940437, z: -265.45667}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &243718612319420304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 243718612319420305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0fd334dedd4e40459df31c74f680789, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  openingLoding: {fileID: 0}
+  openingMenuStart: {fileID: 0}
+  openingMenuStop: {fileID: 0}
+  openingResolutionDropDown: {fileID: 0}
+  openingFullscreenButten: {fileID: 0}
+  openingMenuConfirm: {fileID: 0}
+  openingMenuTap: {fileID: 0}
+  feMaleChoice: {fileID: 0}
+  maleChoice: {fileID: 0}
+  stepOneSave: {fileID: 0}
+  stepOneMenuStart: {fileID: 0}
+  stepOneMenuStop: {fileID: 0}
+  stepOneResolutionDropDown: {fileID: 0}
+  stepOneFullscreenButten: {fileID: 0}
+  stepOneMenuConfirm: {fileID: 0}
+  stepOneMenuTap: {fileID: 0}
+--- !u!114 &243718612319420306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 243718612319420305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01f0cdc4de58c5f488cfdd795e0d3fa6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvasRectTransform: {fileID: 0}
+  itemToolTip: {fileID: 0}

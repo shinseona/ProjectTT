@@ -73,7 +73,7 @@ public class PlacedObject : MonoBehaviour {
     }
 
     public override string ToString() {
-        return placedObjectTypeSO.nameString;
+        return placedObjectTypeSO.itemname;
     }
 
     public PlacedObjectTypeSO GetPlacedObjectTypeSO() {

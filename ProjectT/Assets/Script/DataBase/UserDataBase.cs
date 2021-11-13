@@ -22,5 +22,9 @@ public class UserDataBase : MonoBehaviour
     [SerializeField]
     private bool playerGenderMale;
     public bool PlayerGenderMale { get => playerGenderMale; set => playerGenderMale = value; }
+    
+    [SerializeField]
+    private bool playerisMotorcycle;
+    public bool PlayerisMotorcycle { get => playerisMotorcycle; set => playerisMotorcycle = value; }
 
 }

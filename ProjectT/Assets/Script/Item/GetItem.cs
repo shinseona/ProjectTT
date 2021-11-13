@@ -6,51 +6,26 @@ using UnityEngine;
 public class GetItem : MonoBehaviour
 {
     //private ItemManager itemManager;
-    public GameObject itemDialogE;
-    public GameObject parentObj;
     [SerializeField] private InventoryTetrisManualPlacement inventoryTetris;
-
+    private List<ItemInfo> itemInfos = new List<ItemInfo>();
+    private PlayerInventoryInfo playerInventory;
     private void Start()
     {
-        //itemManager = transform.parent.GetComponent<ItemManager>();
-    }
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (collision.tag == "Item")
+        GameObject info = GameObject.Find("ItemInfo").gameObject;
+        playerInventory = info.GetComponent<PlayerInventoryInfo>();
+        for (int i = 0; i < playerInventory.itemList.Count; i++)
         {
-            if (itemDialogE.activeSelf != true)
-            {
-                ItmeDialogOn();
-            }
-            if (Input.GetKey(KeyCode.E))
-            {
-                GetItemForPlayerInventory(collision);
-            }
+            var item = inventoryTetris.GetItem(playerInventory.itemList[i]);
+            var iteminfo = item.gameObject.GetComponent<ItemInfo>();
+            playerInventory.itemList[i] = iteminfo;
         }
-    }
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.tag == "Item")
+        for (int i = 0; i < info.transform.childCount; i++)
         {
-            if (itemDialogE.activeSelf != false)
-            {
-                ItmeDialogOff();
-            }
+            Debug.Log("aaaa");
+            Destroy(info.transform.GetChild(i).gameObject);
         }
-    }
-    public void ItmeDialogOn()
-    {
-        itemDialogE.SetActive(true);
-    }
-    public void ItmeDialogOff()
 
-    {
-        itemDialogE.SetActive(false);
+
     }
-    private void GetItemForPlayerInventory(Collider2D collision)
-    {
-        ItemInfo itemInfo = collision.transform.parent.GetComponent<ItemInfo>();
-        inventoryTetris.GetItem(itemInfo.ItemID);
-        Destroy(collision.transform.parent.gameObject);
-    }
+
 }

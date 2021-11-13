@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a8881de81c723447ba5f47d93cba053, type: 3}
   m_Name: BoxSo
   m_EditorClassIdentifier: 
-  nameString: Box
+  itemname: "\uBC15\uC2A4"
   prefab: {fileID: 6755215729752791101, guid: 205c04888830b87439096833cb6912ac, type: 3}
   visual: {fileID: 4509151772618998579, guid: 3cf0ed2b0a237e84badd3dbc7a7d6b9a, type: 3}
   width: 2
   height: 2
+  weight: 4
+  creatItemPoint: {x: 1, y: 1}

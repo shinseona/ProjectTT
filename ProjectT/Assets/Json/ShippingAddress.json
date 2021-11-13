@@ -1,0 +1,66 @@
+[
+  {
+    "address": "69",
+    "npcName": "NPC1"
+  },
+  {
+    "address": "70",
+    "npcName": "NPC2"
+  },
+  {
+    "address": "71-1",
+    "npcName": "NPC3"
+  },
+  {
+    "address": "71-2",
+    "npcName": "NPC4"
+  },
+  {
+    "address": "71-3",
+    "npcName": "NPC5"
+  },
+  {
+    "address": "72",
+    "npcName": "NPC6"
+  },
+  {
+    "address": "73",
+    "npcName": "NPC7"
+  },
+  {
+    "address": "74",
+    "npcName": "NPC8"
+  },
+  {
+    "address": "75",
+    "npcName": "NPC9"
+  },
+  {
+    "address": "76",
+    "npcName": "NPC10"
+  },
+  {
+    "address": "77",
+    "npcName": "NPC11"
+  },
+  {
+    "address": "78",
+    "npcName": "NPC12"
+  },
+  {
+    "address": "79",
+    "npcName": "NPC13"
+  },
+  {
+    "address": "80",
+    "npcName": "NPC14"
+  },
+  {
+    "address": "81",
+    "npcName": "NPC15"
+  },
+  {
+    "address": "82",
+    "npcName": "NPC16"
+  }
+]

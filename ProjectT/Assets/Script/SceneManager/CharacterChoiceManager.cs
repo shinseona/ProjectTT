@@ -15,11 +15,13 @@ public class CharacterChoiceManager : MonoBehaviour
     public void femaleChoice()
     {
         udb.PlayerGenderMale = false;
+        udb.PlayerisMotorcycle = false;
         SceneManager.LoadScene("step1");
     }
     public void maleChoice()
     {
         udb.PlayerGenderMale = true;
+        udb.PlayerisMotorcycle = false;
         SceneManager.LoadScene("step1");
     }
 }
