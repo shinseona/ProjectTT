@@ -25,7 +25,7 @@ public class GetItem : MonoBehaviour
             Destroy(info.transform.GetChild(i).gameObject);
         }
 
-
+        
     }
 
 }

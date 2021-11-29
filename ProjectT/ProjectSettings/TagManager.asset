@@ -10,6 +10,8 @@ TagManager:
   - MotorcycleInventory
   - Enemy
   - Addr
+  - Impediments
+  - MainQ
   layers:
   - Default
   - TransparentFX

@@ -15,7 +15,6 @@ public class ShippingManager : MonoBehaviour
     void Start()
     {
         playerInventory = GameObject.Find("ItemInfo").gameObject.GetComponent<PlayerInventoryInfo>();
-
     }
 
     void OnTriggerStay2D(Collider2D col)

@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2abecc76a982ca4ea3fa1c8edf688bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gridMoveSpeed: 3
+  playerMoveSpeed: 2
   _isMoveRight: 0
 --- !u!114 &7299853447133063683
 MonoBehaviour:

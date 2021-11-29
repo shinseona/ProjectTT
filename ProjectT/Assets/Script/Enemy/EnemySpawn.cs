@@ -11,7 +11,7 @@ public class EnemySpawn : MonoBehaviour
     private bool _isSpawn;
     private bool _isPlayerComing; 
    [SerializeField]
-    private float spawnSec=3;
+    private float spawnSec=1.5f;
 
     private float playerDistance;
     
@@ -29,7 +29,8 @@ public class EnemySpawn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        spawnSec = 3.0f;
+        float rn = Random.Range(5, 7);
+        spawnSec = 2.5f;
         playerDistance = player.transform.position.y - transform.position.y;
         
         if (-10>playerDistance||playerDistance>15) return;

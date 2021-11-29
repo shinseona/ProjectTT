@@ -27,7 +27,7 @@ public class CountScore : MonoBehaviour
 
     private void AddScore(int _num)
     {
-        if (Score == 2)
+        if (Score == 100)
         {
             SceneManager.LoadScene("MainGame");
         }

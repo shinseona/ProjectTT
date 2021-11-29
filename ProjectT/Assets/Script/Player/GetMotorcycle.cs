@@ -103,6 +103,5 @@ public class GetMotorcycle : MonoBehaviour
     {
         yield return new WaitForSeconds(1.0f);
         resetMotor = true;
-        Debug.Log("¾Ó");
     }
 }

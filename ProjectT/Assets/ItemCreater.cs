@@ -19,7 +19,7 @@ public class ItemCreater : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        string shippingAddressJson = File.ReadAllText(Application.dataPath + "/Json/ShippingAddress.json");
+        string shippingAddressJson = File.ReadAllText(Application.dataPath + "/Resources/ShippingAddress.json");
         shippingAddressData = JsonMapper.ToObject(shippingAddressJson);
         inventoryTetris = GetComponent<InventoryTetrisManualPlacement>();
         CreatItem();

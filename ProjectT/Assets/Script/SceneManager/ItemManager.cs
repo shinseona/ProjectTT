@@ -25,6 +25,7 @@ public class ItemManager : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.I))
         {
+            Debug.Log("sadsad");
             bool isActive = inventory.activeSelf;
             inventory.SetActive(!isActive);
         }
