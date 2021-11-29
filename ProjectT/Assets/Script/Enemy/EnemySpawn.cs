@@ -14,7 +14,6 @@ public class EnemySpawn : MonoBehaviour
     private float spawnSec=1.5f;
 
     private float playerDistance;
-    
     private int RanNum;
     // Start is called before the first frame update
     void Start()

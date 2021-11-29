@@ -14,10 +14,12 @@ public class EnemyCollisionCheck : MonoBehaviour
     private EnemyPoolable enemyPoolable;
     public Image Hpbar;
     public TextMeshProUGUI hpCount;
+    private GridMove GetPlayerSpeed;
     private void Start()
     {
         gameManager = GameObject.Find("GameManager");
         udb = gameManager.transform.GetChild(1).GetComponent<UserDataBase>();
+        GetPlayerSpeed = GameObject.Find("backG").GetComponent<GridMove>();
 
         infoObj = gameManager.transform.GetChild(5).gameObject;
         playerInventory = infoObj.GetComponent<PlayerInventoryInfo>();
@@ -28,6 +30,7 @@ public class EnemyCollisionCheck : MonoBehaviour
     {
         if (other.gameObject.tag == "Enemy")
         {
+            GetPlayerSpeed.playerMoveSpeed = 2.0f;
             PlayerHp -= 10;
             Hpbar.fillAmount = (float)PlayerHp / 100;
             hpCount.SetText(PlayerHp.ToString());
@@ -44,6 +47,7 @@ public class EnemyCollisionCheck : MonoBehaviour
         }
         if (other.gameObject.tag == "Impediments")
         {
+            GetPlayerSpeed.playerMoveSpeed = 2.0f;
             Destroy(other.gameObject);
             PlayerHp -= 10;
             Hpbar.fillAmount = (float)PlayerHp /100;

@@ -8,6 +8,7 @@ public class EnemyMove : MonoBehaviour
     private float playerMoveSpeed = 2f;
     private float Score = 0;
     private Vector3 gridTransform;
+    private GridMove GetPlayerSpeed;
     public Vector3 GridTransform
     {
         get => gridTransform;
@@ -20,34 +21,40 @@ public class EnemyMove : MonoBehaviour
     {
         gridTransform = transform.position;
         enemyPoolable = gameObject.GetComponent<EnemyPoolable>();
+        GetPlayerSpeed = GameObject.Find("backG").GetComponent<GridMove>();
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        MoveDown = -1 * playerMoveSpeed * Time.deltaTime;
-        switch (_isMoveRight)
+        if (GetPlayerSpeed.gridMove)
         {
-            case true:
-                MoveX = 1 * playerMoveSpeed * Time.deltaTime;
-                if (transform.position.x > 5)
-                {
-                    MoveX = 0;
-                    enemyPoolable.Push();
-                }
-                
-                break;
-            case false:
-                MoveX = -1 * playerMoveSpeed * Time.deltaTime;
-                if (transform.position.x < -5f)
-                {
-                    MoveX = 0;
-                    enemyPoolable.Push();
-                }
-                break;
+            MoveDown = -1 * GetPlayerSpeed.playerMoveSpeed * Time.deltaTime;
+            switch (_isMoveRight)
+            {
+                case true:
+                    MoveX = 1 * playerMoveSpeed * Time.deltaTime;
+                    if (transform.position.x > 5)
+                    {
+                        MoveX = 0;
+                        enemyPoolable.Push();
+                    }
+
+                    break;
+                case false:
+                    MoveX = -1 * playerMoveSpeed * Time.deltaTime;
+                    if (transform.position.x < -5f)
+                    {
+                        MoveX = 0;
+                        enemyPoolable.Push();
+                    }
+
+                    break;
+            }
+
+            Debug.Log(MoveX);
+            transform.position = new Vector2(transform.position.x + MoveX, transform.position.y + MoveDown);
         }
-        Debug.Log(MoveX);
-        transform.position = new Vector2(transform.position.x+ MoveX, transform.position.y+ MoveDown);
     }
 
 }

@@ -209,6 +209,7 @@ GameObject:
   - component: {fileID: 82960063}
   - component: {fileID: 82960062}
   - component: {fileID: 82960064}
+  - component: {fileID: 82960065}
   m_Layer: 0
   m_Name: GridGmaeManager
   m_TagString: Untagged
@@ -238,7 +239,7 @@ MonoBehaviour:
   - {fileID: 4437379484100547680, guid: 5fbb4df852a7ebe4c9869747c20dc2f2, type: 3}
   - {fileID: 1986606806157333403, guid: 4b257421ae557fb43a24bcbabd07d89e, type: 3}
   - {fileID: 1429501132097360008, guid: 389b1645ad8e6d64bbfc8fd816b0c6c9, type: 3}
-  maxSize: 30
+  maxSize: 66
   nowPoint: 0
   BackGrid: {fileID: 352697929}
 --- !u!4 &82960063
@@ -269,6 +270,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   reScoreText: {fileID: 182014762}
   Score: 0
+--- !u!114 &82960065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 82960061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5fab687e9e95764abf816f6bb1a108f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fader: {fileID: 0}
 --- !u!1 &111828881
 GameObject:
   m_ObjectHideFlags: 0
@@ -656,8 +670,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 352697929}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 44.5, z: 0}
-  m_LocalScale: {x: 17.781, y: 100, z: 1}
+  m_LocalPosition: {x: 0, y: 95, z: 0}
+  m_LocalScale: {x: 17.781, y: 200, z: 1}
   m_Children:
   - {fileID: 1082463446}
   m_Father: {fileID: 0}
@@ -676,6 +690,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerMoveSpeed: 2
+  gridMove: 0
 --- !u!1 &845816293
 GameObject:
   m_ObjectHideFlags: 0
@@ -888,7 +903,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 976930415}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.5, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1070,8 +1085,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1082463444}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.475, z: 0}
-  m_LocalScale: {x: 0.056239806, y: 0.01, z: 1}
+  m_LocalPosition: {x: 0, y: -0.48749998, z: 0}
+  m_LocalScale: {x: 0.056239806, y: 0.005, z: 1}
   m_Children: []
   m_Father: {fileID: 352697932}
   m_RootOrder: 0
@@ -1317,7 +1332,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e136c7196447db34baa10f09dbce60ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerMoveSpeed: 3
+  playerMoveSpeed: 4
 --- !u!1 &1806399591
 GameObject:
   m_ObjectHideFlags: 3
@@ -1362,7 +1377,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ad980451443d70438faac0bc6c235a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_TrackedObjectOffset: {x: 0, y: 0, z: 0}
+  m_TrackedObjectOffset: {x: 0, y: 1.0085363, z: 0}
   m_LookaheadTime: 0
   m_LookaheadSmoothing: 0
   m_LookaheadIgnoreY: 0
@@ -1371,7 +1386,7 @@ MonoBehaviour:
   m_ZDamping: 1
   m_TargetMovementOnly: 1
   m_ScreenX: 0.5
-  m_ScreenY: 0.5
+  m_ScreenY: 0.7731464
   m_CameraDistance: 10
   m_DeadZoneWidth: 0
   m_DeadZoneHeight: 0
@@ -1422,7 +1437,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e136c7196447db34baa10f09dbce60ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerMoveSpeed: 2
+  playerMoveSpeed: 4
 --- !u!114 &1814901277
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1486,6 +1501,49 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1971434167
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1971434169}
+  - component: {fileID: 1971434168}
+  m_Layer: 0
+  m_Name: Fade
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1971434168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1971434167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3dae144e9b6c7c4db4324f2350ca01a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1971434169
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1971434167}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 246.5002, y: 265.90353, z: -30.786451}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2089372501
 GameObject:
   m_ObjectHideFlags: 0
@@ -1547,7 +1605,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2089372501}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -5, z: -10}
+  m_LocalPosition: {x: 0, y: -0.75999975, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1806399592}
@@ -1620,7 +1678,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2333741418294162817, guid: 60db6121b64dbb4458215ea64ea0ff42, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 2333741418294162817, guid: 60db6121b64dbb4458215ea64ea0ff42, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1657,6 +1715,10 @@ PrefabInstance:
     - target: {fileID: 3416339424756432869, guid: 60db6121b64dbb4458215ea64ea0ff42, type: 3}
       propertyPath: m_Name
       value: GridGamePlayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 3416339424756432869, guid: 60db6121b64dbb4458215ea64ea0ff42, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 60db6121b64dbb4458215ea64ea0ff42, type: 3}

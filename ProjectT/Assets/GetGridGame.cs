@@ -6,10 +6,11 @@ using UnityEngine.SceneManagement;
 public class GetGridGame : MonoBehaviour
 {
     private PlayerInventoryInfo itemInfo;
-
+    public FadeManager fader;
     void Start()
     {
         itemInfo = GameObject.Find("ItemInfo").gameObject.GetComponent<PlayerInventoryInfo>();
+        fader = GameObject.Find("FadeManager").gameObject.GetComponent<FadeManager>();
     }
     void OnTriggerEnter2D(Collider2D collider)
     {
@@ -19,9 +20,10 @@ public class GetGridGame : MonoBehaviour
             {
                 itemInfo.itemList[i].transform.parent = itemInfo.transform;
             }
-            
-            Debug.Log("GridGame으로 이동");
-            SceneManager.LoadScene("GridGame");
+
+            StartCoroutine(fader.FadeInActiveate(fader, "GridGame"));
+            //SceneManager.LoadScene("GridGame");
         }
     }
+
 }

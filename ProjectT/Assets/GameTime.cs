@@ -18,11 +18,13 @@ public class GameTime : MonoBehaviour
     private PlayerInventoryInfo iteminof;
     private GameObject gameManager;
     UserDataBase udb;
+    public FadeManager fader;
 
 
     void Start()
     {
         gameManager = GameObject.Find("GameManager").gameObject;
+        fader = GameObject.Find("FadeManager").gameObject.GetComponent<FadeManager>();
         udb = gameManager.transform.GetChild(1).GetComponent<UserDataBase>();
         iteminof = gameManager.transform.GetChild(5).GetComponent<PlayerInventoryInfo>();
 
@@ -48,13 +50,13 @@ public class GameTime : MonoBehaviour
         {
             iteminof.itemList = new List<ItemInfo>();
             udb.PlayerisMotorcycle = false;
-            SceneManager.LoadScene("step1");
+            StartCoroutine(fader.FadeInActiveate(fader, "step1"));
         }
         else if (iteminof.itemList.Count ==0) 
         {
             iteminof.itemList = new List<ItemInfo>();
             udb.PlayerisMotorcycle = false;
-            SceneManager.LoadScene("step1");
+            StartCoroutine(fader.FadeInActiveate(fader, "step1"));
         }
     }
 }

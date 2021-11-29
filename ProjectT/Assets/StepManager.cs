@@ -20,6 +20,7 @@ public class StepManager : MonoBehaviour
     private TextMeshProUGUI npcNameNum;
     private TextMeshProUGUI weightNum;
     private bool ishide;
+    public FadeManager fader;
     void Awake()
     {
         instance = this;
@@ -33,6 +34,8 @@ public class StepManager : MonoBehaviour
     void Start()
     {
         itemToolTip.SetActive(false);
+        fader = GameObject.Find("FadeManager").gameObject.GetComponent<FadeManager>();
+        StartCoroutine(fader.FadeOutActiveate(fader));
     }
 
     void Update()

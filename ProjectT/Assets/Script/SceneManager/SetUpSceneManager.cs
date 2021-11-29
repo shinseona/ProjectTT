@@ -4,10 +4,12 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class SetUpSceneManager : MonoBehaviour
 {
-
+    public FadeManager fader;
     void Start()
     {
-        SceneManager.LoadScene("Opening");
+        fader = GameObject.Find("FadeManager").gameObject.GetComponent<FadeManager>();
+        StartCoroutine(fader.FadeInActiveate(fader, "Opening"));
+        //SceneManager.LoadScene("Opening");
     }
 
 }

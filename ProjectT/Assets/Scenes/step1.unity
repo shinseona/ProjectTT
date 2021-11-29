@@ -5357,6 +5357,10 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 260489142512238646, guid: 08050e506bc926746aa09b8af21a27ba, type: 3}
+      propertyPath: fader
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4343742278639650080, guid: 08050e506bc926746aa09b8af21a27ba, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -5469,6 +5473,10 @@ PrefabInstance:
       propertyPath: vcam1
       value: 
       objectReference: {fileID: 1786994409}
+    - target: {fileID: 5779277368231502687, guid: 08050e506bc926746aa09b8af21a27ba, type: 3}
+      propertyPath: fader
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6443377013385199514, guid: 08050e506bc926746aa09b8af21a27ba, type: 3}
       propertyPath: parentObj
       value: 

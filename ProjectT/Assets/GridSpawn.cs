@@ -8,7 +8,8 @@ public class GridSpawn : MonoBehaviour
     private List<GameObject> GridSpawnObj;
     
     private int choiceGrid;
-    public int maxSize=30;
+    public int maxSize=65;
+    private int nowSize = 0;
     public int nowPoint=0;
     public GameObject BackGrid;
     // Start is called before the first frame update
@@ -26,7 +27,9 @@ public class GridSpawn : MonoBehaviour
         road3.Add(GridSpawnObj[6]);
         road3.Add(GridSpawnObj[7]);
         road3.Add(GridSpawnObj[8]);
-        for (; nowPoint < maxSize; nowPoint++)
+
+        nowSize += maxSize;
+        for (; nowPoint < nowSize; nowPoint++)
         {
             int ranNum = Random.Range(0, 101);
             var rRanNum=RetrunRandomNum(ranNum,2);
@@ -36,9 +39,8 @@ public class GridSpawn : MonoBehaviour
             grids.transform.parent = BackGrid.transform;
         }
 
-        maxSize += 30;
-        
-        for (; nowPoint < maxSize; nowPoint++)
+        nowSize += maxSize;
+        for (; nowPoint < nowSize; nowPoint++)
         {
             int ranNum = Random.Range(0, 101);
             var rRanNum = RetrunRandomNum(ranNum,10);
@@ -48,8 +50,8 @@ public class GridSpawn : MonoBehaviour
             grids.transform.parent = BackGrid.transform;
         }
 
-        maxSize += 30;
-        for (; nowPoint < maxSize; nowPoint++)
+        nowSize += maxSize;
+        for (; nowPoint < nowSize; nowPoint++)
         {
             int ranNum = Random.Range(0, 101);
             var rRanNum = RetrunRandomNum(ranNum,15);
