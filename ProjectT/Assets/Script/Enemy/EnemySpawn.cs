@@ -29,7 +29,7 @@ public class EnemySpawn : MonoBehaviour
     void Update()
     {
         float rn = Random.Range(5, 7);
-        spawnSec = 2.5f;
+        spawnSec =3.5f;
         playerDistance = player.transform.position.y - transform.position.y;
         
         if (-10>playerDistance||playerDistance>15) return;
