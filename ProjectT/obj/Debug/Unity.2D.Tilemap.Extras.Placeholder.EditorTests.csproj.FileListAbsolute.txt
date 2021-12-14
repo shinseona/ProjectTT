@@ -275,10 +275,6 @@ D:\Project\ProjectTT\ProjectT\Temp\Bin\Debug\UnityEditor.UIElementsSamplesModule
 D:\Project\ProjectTT\ProjectT\Temp\Bin\Debug\UnityEditor.UIServiceModule.xml
 D:\Project\ProjectTT\ProjectT\Temp\Bin\Debug\UnityEditor.UnityConnectModule.xml
 D:\Project\ProjectTT\ProjectT\Temp\Bin\Debug\UnityEditor.WindowsStandalone.Extensions.pdb
-D:\Project\ProjectTT\ProjectT\Temp\Bin\Debug\UnityEngine.TestRunner.pdb
-D:\Project\ProjectTT\ProjectT\Temp\Bin\Debug\UnityEditor.TestRunner.pdb
-D:\Project\ProjectTT\ProjectT\Temp\Bin\Debug\UnityEditor.UI.pdb
-D:\Project\ProjectTT\ProjectT\Temp\Bin\Debug\UnityEngine.UI.pdb
 D:\Project\ProjectTT\ProjectT\obj\Debug\Unity.2D.Tilemap.Extras.Placeholder.EditorTests.csprojAssemblyReference.cache
 D:\Project\ProjectTT\ProjectT\obj\Debug\Unity.2D.Tilemap.Extras.Placeholder.EditorTests.csproj.CoreCompileInputs.cache
 D:\Project\ProjectTT\ProjectT\obj\Debug\Unity.2D.Tilemap.Extras.Placeholder.EditorTests.csproj.CopyComplete

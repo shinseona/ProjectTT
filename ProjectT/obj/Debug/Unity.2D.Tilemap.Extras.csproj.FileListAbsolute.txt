@@ -284,8 +284,6 @@ D:\Project\ProjectTT\ProjectT\Temp\Bin\Debug\UnityEditor.UIServiceModule.xml
 D:\Project\ProjectTT\ProjectT\Temp\Bin\Debug\UnityEditor.UnityConnectModule.xml
 D:\Project\ProjectTT\ProjectT\Temp\Bin\Debug\UnityEditor.WindowsStandalone.Extensions.pdb
 D:\Project\ProjectTT\ProjectT\Temp\Bin\Debug\Facepunch.Steamworks.Win64.xml
-D:\Project\ProjectTT\ProjectT\Temp\Bin\Debug\UnityEditor.UI.pdb
-D:\Project\ProjectTT\ProjectT\Temp\Bin\Debug\UnityEngine.UI.pdb
 D:\Project\ProjectTT\ProjectT\obj\Debug\Unity.2D.Tilemap.Extras.csprojAssemblyReference.cache
 D:\Project\ProjectTT\ProjectT\obj\Debug\Unity.2D.Tilemap.Extras.csproj.CoreCompileInputs.cache
 D:\Project\ProjectTT\ProjectT\obj\Debug\Unity.2D.Tilemap.Extras.csproj.CopyComplete
