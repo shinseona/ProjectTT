@@ -11,6 +11,7 @@ public class CountScore : MonoBehaviour
     public static CountScore Instance { get; private set; }
     [SerializeField]
     private TextMeshProUGUI reScoreText;
+    
     public int Score;
     private FadeManager fader;
     // Start is called before the first frame update
@@ -36,7 +37,6 @@ public class CountScore : MonoBehaviour
         Score += _num;
         if (Score == 200)
         {
-
             StartCoroutine(fader.FadeInActiveate(fader, "MainGame"));
             //SceneManager.LoadScene("MainGame");
         }

@@ -49,3 +49,6 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: bush
+    uniqueID: 1000361103
+    locked: 0

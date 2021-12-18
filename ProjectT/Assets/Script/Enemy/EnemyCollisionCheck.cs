@@ -15,15 +15,21 @@ public class EnemyCollisionCheck : MonoBehaviour
     public Image Hpbar;
     public TextMeshProUGUI hpCount;
     private GridMove GetPlayerSpeed;
+    private Animator anima;
+
+    public FadeManager fader;
     private void Start()
     {
         gameManager = GameObject.Find("GameManager");
         udb = gameManager.transform.GetChild(1).GetComponent<UserDataBase>();
         GetPlayerSpeed = GameObject.Find("backG").GetComponent<GridMove>();
 
+
+        fader = GameObject.Find("FadeManager").gameObject.GetComponent<FadeManager>();
         infoObj = gameManager.transform.GetChild(5).gameObject;
         playerInventory = infoObj.GetComponent<PlayerInventoryInfo>();
         hpCount.SetText(PlayerHp.ToString());
+        anima = GetComponent<Animator>();
 
     }
     private void OnTriggerEnter2D(Collider2D other)
@@ -31,24 +37,27 @@ public class EnemyCollisionCheck : MonoBehaviour
         if (other.gameObject.tag == "Enemy")
         {
             GetPlayerSpeed.playerMoveSpeed = 2.0f;
+            anima.SetTrigger("crash");
             PlayerHp -= 10;
             Hpbar.fillAmount = (float)PlayerHp / 100;
             hpCount.SetText(PlayerHp.ToString());
             Debug.Log("playerHp:"+PlayerHp);
             enemyPoolable = other.gameObject.GetComponent<EnemyPoolable>();
             enemyPoolable.Push();
+           
             if (PlayerHp <= 0)
             {
                 playerInventory.itemList = new List<ItemInfo>();
                 Debug.Log("Game Over");
                 udb.PlayerisMotorcycle = false;
-                SceneManager.LoadScene("step1");
+                StartCoroutine(fader.FadeInActiveate(fader, "step1"));
             }
         }
         if (other.gameObject.tag == "Impediments")
         {
             GetPlayerSpeed.playerMoveSpeed = 2.0f;
             Destroy(other.gameObject);
+            anima.SetTrigger("crash");
             PlayerHp -= 10;
             Hpbar.fillAmount = (float)PlayerHp /100;
             hpCount.SetText(PlayerHp.ToString());
@@ -57,7 +66,7 @@ public class EnemyCollisionCheck : MonoBehaviour
                 playerInventory.itemList = new List<ItemInfo>();
                 Debug.Log("Game Over");
                 udb.PlayerisMotorcycle = false;
-                SceneManager.LoadScene("step1");
+                StartCoroutine(fader.FadeInActiveate(fader, "step1"));
             }
         }
     }

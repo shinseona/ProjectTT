@@ -21,6 +21,8 @@ public class StepManager : MonoBehaviour
     private TextMeshProUGUI weightNum;
     private bool ishide;
     public FadeManager fader;
+    public bool step1 =false;
+    UserDataBase udb;
     void Awake()
     {
         instance = this;
@@ -29,6 +31,7 @@ public class StepManager : MonoBehaviour
         addressNum = itemToolTip.transform.Find("AddressNum").GetComponent<TextMeshProUGUI>();
         npcNameNum = itemToolTip.transform.Find("NPCNameNum").GetComponent<TextMeshProUGUI>();
         weightNum = itemToolTip.transform.Find("WeightNum").GetComponent<TextMeshProUGUI>();
+        udb = GameObject.Find("UserDataBase").GetComponent<UserDataBase>();
     }
 
     void Start()
@@ -36,6 +39,16 @@ public class StepManager : MonoBehaviour
         itemToolTip.SetActive(false);
         fader = GameObject.Find("FadeManager").gameObject.GetComponent<FadeManager>();
         StartCoroutine(fader.FadeOutActiveate(fader));
+        if (step1)
+        {
+
+            udb.Day += 1;
+            if (udb.Day > 28)
+            {
+                udb.Month += 1;
+                udb.Day = 1;
+            }
+        }
     }
 
     void Update()

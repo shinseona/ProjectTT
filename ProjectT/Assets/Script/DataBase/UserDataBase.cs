@@ -12,6 +12,9 @@ public class UserDataBase : MonoBehaviour
     private string username;
     public string Username { get => username; set => username = value; }
     [SerializeField]
+    private string saveName;
+    public string SaveName { get => saveName; set => saveName = value; }
+    [SerializeField]
     private string userSeverID;
     public string UserSeverID { get => userSeverID; set => userSeverID = value; }
     
@@ -26,5 +29,16 @@ public class UserDataBase : MonoBehaviour
     [SerializeField]
     private bool playerisMotorcycle;
     public bool PlayerisMotorcycle { get => playerisMotorcycle; set => playerisMotorcycle = value; }
+
+    [SerializeField]
+    private string date;
+    public string Date{ get => Month+"¿ù "+Day+"ÀÏ"; }
+
+    [SerializeField]
+    private int day;
+    public int Day { get => day; set => day = value; }
+
+    [SerializeField] private int month;
+    public int Month { get => month; set => month = value; }
 
 }
