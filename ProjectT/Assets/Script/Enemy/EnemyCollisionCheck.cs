@@ -16,7 +16,8 @@ public class EnemyCollisionCheck : MonoBehaviour
     public TextMeshProUGUI hpCount;
     private GridMove GetPlayerSpeed;
     private Animator anima;
-
+    public float invincibilityTime = 5.0f;
+    private bool isInvincibility = false;
     public FadeManager fader;
     private void Start()
     {
@@ -36,38 +37,55 @@ public class EnemyCollisionCheck : MonoBehaviour
     {
         if (other.gameObject.tag == "Enemy")
         {
-            GetPlayerSpeed.playerMoveSpeed = 2.0f;
-            anima.SetTrigger("crash");
-            PlayerHp -= 10;
-            Hpbar.fillAmount = (float)PlayerHp / 100;
-            hpCount.SetText(PlayerHp.ToString());
-            Debug.Log("playerHp:"+PlayerHp);
             enemyPoolable = other.gameObject.GetComponent<EnemyPoolable>();
             enemyPoolable.Push();
-           
-            if (PlayerHp <= 0)
+
+            if (!isInvincibility)
             {
-                playerInventory.itemList = new List<ItemInfo>();
-                Debug.Log("Game Over");
-                udb.PlayerisMotorcycle = false;
-                StartCoroutine(fader.FadeInActiveate(fader, "step1"));
+                StartCoroutine(Invincibility());
+                GetPlayerSpeed.playerMoveSpeed = 2.0f;
+                anima.SetTrigger("crash");
+                PlayerHp -= 10;
+                Hpbar.fillAmount = (float) PlayerHp / 100;
+                hpCount.SetText(PlayerHp.ToString());
+                Debug.Log("playerHp:" + PlayerHp);
+
+
+                if (PlayerHp <= 0)
+                {
+                    playerInventory.itemList = new List<ItemInfo>();
+                    Debug.Log("Game Over");
+                    udb.PlayerisMotorcycle = false;
+                    StartCoroutine(fader.FadeInActiveate(fader, "step1"));
+                }
             }
         }
         if (other.gameObject.tag == "Impediments")
         {
-            GetPlayerSpeed.playerMoveSpeed = 2.0f;
             Destroy(other.gameObject);
-            anima.SetTrigger("crash");
-            PlayerHp -= 10;
-            Hpbar.fillAmount = (float)PlayerHp /100;
-            hpCount.SetText(PlayerHp.ToString());
-            if (PlayerHp <= 0)
+            if (!isInvincibility)
             {
-                playerInventory.itemList = new List<ItemInfo>();
-                Debug.Log("Game Over");
-                udb.PlayerisMotorcycle = false;
-                StartCoroutine(fader.FadeInActiveate(fader, "step1"));
+                StartCoroutine(Invincibility());
+                GetPlayerSpeed.playerMoveSpeed = 2.0f;
+                anima.SetTrigger("crash");
+                PlayerHp -= 10;
+                Hpbar.fillAmount = (float) PlayerHp / 100;
+                hpCount.SetText(PlayerHp.ToString());
+                if (PlayerHp <= 0)
+                {
+                    playerInventory.itemList = new List<ItemInfo>();
+                    Debug.Log("Game Over");
+                    udb.PlayerisMotorcycle = false;
+                    StartCoroutine(fader.FadeInActiveate(fader, "step1"));
+                }
             }
         }
+    }
+
+    IEnumerator Invincibility()
+    {
+        isInvincibility = true;
+        yield return new WaitForSeconds(invincibilityTime);
+        isInvincibility = false;
     }
 }

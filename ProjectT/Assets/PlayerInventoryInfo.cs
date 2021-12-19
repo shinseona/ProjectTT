@@ -6,9 +6,13 @@ public class PlayerInventoryInfo : MonoBehaviour
 {
     
     public List<ItemInfo> itemList = new List<ItemInfo>();
+    public UserDataBase udb;
     private int itemWeight = 0;
     public int Playercoin=0;
 
+    void Start()
+    {
+    }
     public void ItemInit(ItemInfo _iteminfo)
     {
         itemList.Add(_iteminfo);
@@ -39,6 +43,7 @@ public class PlayerInventoryInfo : MonoBehaviour
             if (itemList[i].ShippingAddress == _addr)
             {
                 coin += 1000;
+                
                 var temp = itemList[i];
                 itemList.Remove(itemList[i]);
                 Destroy(temp.gameObject);
@@ -49,7 +54,8 @@ public class PlayerInventoryInfo : MonoBehaviour
             }
         }
 
-        Playercoin += coin;
+        Playercoin += coin; 
+        udb.Money += coin;
     }
     public void ItemRemove(ItemInfo _iteminfo)
     {

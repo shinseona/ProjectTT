@@ -21,7 +21,6 @@ public class GetItem : MonoBehaviour
         }
         for (int i = 0; i < info.transform.childCount; i++)
         {
-            Debug.Log("aaaa");
             Destroy(info.transform.GetChild(i).gameObject);
         }
 

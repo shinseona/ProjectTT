@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GridMove : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class GridMove : MonoBehaviour
     private float Score = 0;
     public bool gridMove = false;
     private float nowPoint;
+    public Image Speedbar;
+
 
     void Start()
     {
@@ -23,6 +26,7 @@ public class GridMove : MonoBehaviour
         nowPoint = transform.position.y;
         if (gridMove)
         {
+            Speedbar.fillAmount = playerMoveSpeed / 6.0f;
             Debug.Log(playerMoveSpeed);
             if (playerMoveSpeed < 4.0f)
             {

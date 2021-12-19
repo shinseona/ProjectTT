@@ -15,7 +15,7 @@ public class Opening : MonoBehaviour
     }
     public void StartButten()
     {
-        StartCoroutine(fader.FadeInActiveate(fader, "CharacterChoice"));
+        StartCoroutine(fader.FadeInActiveate(fader, "ChoiceLoad"));
         //SceneManager.LoadScene("CharacterChoice");
     }
     public void LodeButten()

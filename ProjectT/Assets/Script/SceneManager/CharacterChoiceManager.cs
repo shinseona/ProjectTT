@@ -5,7 +5,6 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 public class CharacterChoiceManager : MonoBehaviour
 {
-    GameObject gameManager;
     UserDataBase udb;
     public FadeManager fader;
     public GameObject maB;
@@ -16,12 +15,13 @@ public class CharacterChoiceManager : MonoBehaviour
     public InputField nameSet;
     private void Start()
     {
-        gameManager = GameObject.Find("GameManager");
         fader = GameObject.Find("FadeManager").gameObject.GetComponent<FadeManager>();
-        udb = gameManager.transform.GetChild(1).GetComponent<UserDataBase>();
+        udb = GameObject.Find("UserDataBase").GetComponent<UserDataBase>();
         StartCoroutine(fader.FadeOutActiveate(fader));
         maleChoice();
     }
+
+
     public void femaleChoice()
     {
         maB.SetActive(false);
@@ -50,12 +50,13 @@ public class CharacterChoiceManager : MonoBehaviour
         
         udb.Day = 0;
         udb.Month = 1;
+        udb.Money = 0;
         udb.SaveName = nameSet.text;
     }
 
     public void LowLevel()
     {
-        StartCoroutine(fader.FadeInActiveate(fader, "opening"));
+        StartCoroutine(fader.FadeInActiveate(fader, "ChoiceLoad"));
     }
 
 }

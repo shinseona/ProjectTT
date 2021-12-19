@@ -50,12 +50,14 @@ public class GameTime : MonoBehaviour
         {
             iteminof.itemList = new List<ItemInfo>();
             udb.PlayerisMotorcycle = false;
+            udb.Money = iteminof.Playercoin;
             StartCoroutine(fader.FadeInActiveate(fader, "step1"));
         }
         else if (iteminof.itemList.Count ==0) 
         {
             iteminof.itemList = new List<ItemInfo>();
             udb.PlayerisMotorcycle = false;
+            udb.Money = iteminof.Playercoin;
             StartCoroutine(fader.FadeInActiveate(fader, "step1"));
         }
     }

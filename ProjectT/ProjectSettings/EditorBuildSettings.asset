@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Opening.unity
     guid: 38b6480e446b96b439eb8ead2f0422f5
   - enabled: 1
+    path: Assets/Scenes/ChoiceLoad.unity
+    guid: 1b9fc3eb92ccb554eaf0785aa9165fd0
+  - enabled: 1
     path: Assets/Scenes/CharacterChoice.unity
     guid: 8f3ce98a0a3099341b8bc9746aae103f
   - enabled: 1

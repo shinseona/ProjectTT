@@ -25,7 +25,7 @@ public class InventoryControl : MonoBehaviour
             foreach (var VARIABLE in Moto)
             {
                 VARIABLE.SetActive(true);
-                VARIABLE.GetComponent<RectTransform>().localPosition = new Vector3(-125, -184, 0);
+                VARIABLE.GetComponent<RectTransform>().localPosition = new Vector3(-10, -19, 0);
             }
 
             foreach (var VARIABLE in NotMoto)
@@ -48,7 +48,7 @@ public class InventoryControl : MonoBehaviour
             foreach (var VARIABLE in Moto)
             {
                 VARIABLE.SetActive(true);
-                VARIABLE.GetComponent<RectTransform>().localPosition = new Vector3(141, -184, 0);
+                VARIABLE.GetComponent<RectTransform>().localPosition = new Vector3(14, -19, 0);
             }
 
             foreach (var VARIABLE in NotMoto)
@@ -67,7 +67,7 @@ public class InventoryControl : MonoBehaviour
             foreach (var VARIABLE in Moto)
             {
                 VARIABLE.SetActive(true);
-                VARIABLE.GetComponent<RectTransform>().localPosition = new Vector3(-125, -184, 0);
+                VARIABLE.GetComponent<RectTransform>().localPosition = new Vector3(-10, -19, 0);
             }
             foreach (var VARIABLE in NotMoto)
             {

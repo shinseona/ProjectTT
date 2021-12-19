@@ -15,6 +15,7 @@ public class MenuMangaer : MonoBehaviour
     public List<Resolution> resolution = new List<Resolution>();//호환 가능 화면 크기 저장
     public List<ScreenSize> screenSizes = new List<ScreenSize>();
     public List<int> resolution_hz = new List<int>();
+    public FadeManager fader;
 
     public int resolutionNum;
     private void Awake()
@@ -31,6 +32,12 @@ public class MenuMangaer : MonoBehaviour
         }
         screenSizes = screenSizes.ToList();
 
+    }
+
+    void Start()
+    {
+
+        fader = GameObject.Find("FadeManager").gameObject.GetComponent<FadeManager>();
     }
     public void DropboxOptionChange(int _optionNum)
     {
@@ -58,5 +65,8 @@ public class MenuMangaer : MonoBehaviour
         Debug.Log("메뉴 종료");
     }
 
-
+    public void GoHome()
+    {
+        StartCoroutine(fader.FadeInActiveate(fader, "Opening"));
+    }
 }

@@ -289,3 +289,5 @@ D:\Project\ProjectTT\ProjectT\obj\Debug\Unity.2D.Tilemap.Extras.csproj.CoreCompi
 D:\Project\ProjectTT\ProjectT\obj\Debug\Unity.2D.Tilemap.Extras.csproj.CopyComplete
 D:\Project\ProjectTT\ProjectT\obj\Debug\Unity.2D.Tilemap.Extras.dll
 D:\Project\ProjectTT\ProjectT\obj\Debug\Unity.2D.Tilemap.Extras.pdb
+D:\Project\ProjectTT\ProjectT\Temp\Bin\Debug\UnityEditor.UI.pdb
+D:\Project\ProjectTT\ProjectT\Temp\Bin\Debug\UnityEngine.UI.pdb

@@ -26,16 +26,13 @@ public class ButtonController : MonoBehaviour
     public Toggle stepOneFullscreenButten;
     public Button stepOneMenuConfirm;
     public GameObject stepOneMenuTap;
+    public Button GoingHome;
 
     GameObject gameManager;
-    SaveManager saveManager;
-    LoadManager loadManager;
     MenuMangaer menuManger;
     void Start()
     {
         gameManager = GameObject.Find("GameManager");
-        saveManager = gameManager.transform.GetChild(3).GetComponent<SaveManager>();
-        loadManager = gameManager.transform.GetChild(3).GetComponent<LoadManager>();
         menuManger = gameManager.transform.GetChild(4).GetComponent<MenuMangaer>();
 
         if (SceneManager.GetActiveScene().name == "Opening")
@@ -53,8 +50,7 @@ public class ButtonController : MonoBehaviour
     private void Opening()
     {
         menuManger.MenuTap = openingMenuTap;
-
-        openingLoding.onClick.AddListener(loadManager.LoadButton);
+        
         openingMenuStart.onClick.AddListener(menuManger.StartMenu);
         openingMenuStop.onClick.AddListener(menuManger.StopMenu);
         openingResolutionDropDown.onValueChanged.AddListener(menuManger.DropboxOptionChange);
@@ -83,13 +79,13 @@ public class ButtonController : MonoBehaviour
     private void StepOne()
     {
         menuManger.MenuTap = stepOneMenuTap;
-
-        stepOneSave.onClick.AddListener(saveManager.SaveButton);
+        
         stepOneMenuStart.onClick.AddListener(menuManger.StartMenu);
         stepOneMenuStop.onClick.AddListener(menuManger.StopMenu);
         stepOneResolutionDropDown.onValueChanged.AddListener(menuManger.DropboxOptionChange);
         stepOneFullscreenButten.onValueChanged.AddListener(menuManger.FullScreenChange);
         stepOneMenuConfirm.onClick.AddListener(menuManger.MenuConfirm);
+        GoingHome.onClick.AddListener(menuManger.GoHome);
 
         stepOneResolutionDropDown.options.Clear();
         int optionNum = 0;

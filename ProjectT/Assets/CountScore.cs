@@ -9,32 +9,46 @@ using UnityEngine.SceneManagement;
 public class CountScore : MonoBehaviour
 {
     public static CountScore Instance { get; private set; }
-    [SerializeField]
-    private TextMeshProUGUI reScoreText;
-    
+    private UserDataBase udb;
     public int Score;
     private FadeManager fader;
+
+    public RectTransform ma;
+    public RectTransform fe;
+    
     // Start is called before the first frame update
     private void Awake()
     {
         Instance = this;
-         
     }
 
     private void Start()
     {
         fader = GameObject.Find("FadeManager").gameObject.GetComponent<FadeManager>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        reScoreText.text = Score.ToString();
+        udb = GameObject.Find("UserDataBase").gameObject.GetComponent<UserDataBase>();
+        if (udb.PlayerGenderMale)
+        {
+            ma.gameObject.SetActive(true);
+            fe.gameObject.SetActive(false);
+        }
+        else
+        {
+            fe.gameObject.SetActive(true);
+            ma.gameObject.SetActive(false);
+        }
     }
 
     private void AddScore(int _num)
     {
         Score += _num;
+        if (udb.PlayerGenderMale)
+        {
+            ma.position += new Vector3(3.425f, 0,0);
+        }
+        else
+        {
+            fe.position += new Vector3(3.425f, 0, 0);
+        }
         if (Score == 200)
         {
             StartCoroutine(fader.FadeInActiveate(fader, "MainGame"));

@@ -6,16 +6,16 @@ using TMPro;
 
 public class DateLoad : MonoBehaviour
 {
-    private UserDataBase dateinof;
+    private UserDataBase udb;
     [SerializeField] private TextMeshProUGUI date;
 
     void Start()
     {
-        dateinof = GameObject.Find("UserDataBase").GetComponent<UserDataBase>();
+        udb = GameObject.Find("UserDataBase").GetComponent<UserDataBase>();
 
     }
     void Update()
     {
-        date.SetText(dateinof.Date);
+        date.SetText(udb.Date);
     }
 }

@@ -32,7 +32,9 @@ public class UserDataBase : MonoBehaviour
 
     [SerializeField]
     private string date;
-    public string Date{ get => Month+"월 "+Day+"일"; }
+    public string Date{ get => Month+"월 "+Day+"일";
+        set => date = value;
+    }
 
     [SerializeField]
     private int day;
@@ -40,5 +42,10 @@ public class UserDataBase : MonoBehaviour
 
     [SerializeField] private int month;
     public int Month { get => month; set => month = value; }
+    [SerializeField] private int saveFileNum;
+    public int SaveFileNum { get => saveFileNum; set => saveFileNum = value; }
+    [SerializeField]
+    private int money;
+    public int Money { get => money; set => money = value; }
 
 }

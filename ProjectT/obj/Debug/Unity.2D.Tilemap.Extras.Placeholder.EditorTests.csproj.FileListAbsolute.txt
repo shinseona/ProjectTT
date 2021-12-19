@@ -280,3 +280,7 @@ D:\Project\ProjectTT\ProjectT\obj\Debug\Unity.2D.Tilemap.Extras.Placeholder.Edit
 D:\Project\ProjectTT\ProjectT\obj\Debug\Unity.2D.Tilemap.Extras.Placeholder.EditorTests.csproj.CopyComplete
 D:\Project\ProjectTT\ProjectT\obj\Debug\Unity.2D.Tilemap.Extras.Placeholder.EditorTests.dll
 D:\Project\ProjectTT\ProjectT\obj\Debug\Unity.2D.Tilemap.Extras.Placeholder.EditorTests.pdb
+D:\Project\ProjectTT\ProjectT\Temp\Bin\Debug\UnityEngine.TestRunner.pdb
+D:\Project\ProjectTT\ProjectT\Temp\Bin\Debug\UnityEditor.TestRunner.pdb
+D:\Project\ProjectTT\ProjectT\Temp\Bin\Debug\UnityEditor.UI.pdb
+D:\Project\ProjectTT\ProjectT\Temp\Bin\Debug\UnityEngine.UI.pdb
