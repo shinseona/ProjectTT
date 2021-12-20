@@ -130,29 +130,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 713931423, guid: cbf39baafc3db0b4396d22bf8d4be92e, type: 3}
-      propertyPath: bgmClip.Array.size
-      value: 5
+    - target: {fileID: 525836690, guid: cbf39baafc3db0b4396d22bf8d4be92e, type: 3}
+      propertyPath: sizeOptionNum
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 713931423, guid: cbf39baafc3db0b4396d22bf8d4be92e, type: 3}
-      propertyPath: bgmClip.Array.data[1]
-      value: 
-      objectReference: {fileID: 8300000, guid: 187cc89b428aafb40a041e7fbf597e21, type: 3}
-    - target: {fileID: 713931423, guid: cbf39baafc3db0b4396d22bf8d4be92e, type: 3}
-      propertyPath: bgmClip.Array.data[2]
-      value: 
-      objectReference: {fileID: 8300000, guid: dfea289c018de75409c435249f13afc4, type: 3}
-    - target: {fileID: 713931423, guid: cbf39baafc3db0b4396d22bf8d4be92e, type: 3}
-      propertyPath: bgmClip.Array.data[3]
-      value: 
-      objectReference: {fileID: 8300000, guid: 44e610972fd0283499b0294f99091081, type: 3}
-    - target: {fileID: 713931423, guid: cbf39baafc3db0b4396d22bf8d4be92e, type: 3}
-      propertyPath: bgmClip.Array.data[4]
-      value: 
-      objectReference: {fileID: 8300000, guid: fbe58a90fccbf58499581460fbc5fb02, type: 3}
     - target: {fileID: 713931424, guid: cbf39baafc3db0b4396d22bf8d4be92e, type: 3}
       propertyPath: Mute
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3206541568720246084, guid: cbf39baafc3db0b4396d22bf8d4be92e, type: 3}
       propertyPath: m_RootOrder

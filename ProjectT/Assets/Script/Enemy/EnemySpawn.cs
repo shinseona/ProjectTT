@@ -45,6 +45,12 @@ public class EnemySpawn : MonoBehaviour
                 enemy.transform.position = transform.position;
                 enemy.GetComponent<EnemyMove>().GridTransform = transform.position;
                 enemy.GetComponent<EnemyMove>()._isMoveRight = !_isRight;
+                var anim=enemy.GetComponent<Animator>();
+                
+                if(!_isRight)
+                anim.SetTrigger("Right");
+                else
+                anim.SetTrigger("Left");
             }
         }
     }

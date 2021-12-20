@@ -187,12 +187,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b5cf479812628d4db5751c690db0d52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bgm: {fileID: 0}
   bgmClip:
   - {fileID: 8300000, guid: 9f32e9f342f2d1f4a832f6e69473f38d, type: 3}
-  - {fileID: 0}
   - {fileID: 8300000, guid: 187cc89b428aafb40a041e7fbf597e21, type: 3}
   - {fileID: 8300000, guid: dfea289c018de75409c435249f13afc4, type: 3}
-  - {fileID: 8300000, guid: dfea289c018de75409c435249f13afc4, type: 3}
+  - {fileID: 8300000, guid: 44e610972fd0283499b0294f99091081, type: 3}
   - {fileID: 8300000, guid: fbe58a90fccbf58499581460fbc5fb02, type: 3}
 --- !u!1 &1077813801
 GameObject:

@@ -91,6 +91,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemSo: {fileID: 11400000, guid: 6837d445f63c9754f82e4bedb6c49ee3, type: 2}
+  npcName: 
+  shippingAddress: 
+  savePoint: {x: 0, y: 0}
 --- !u!61 &4930465529334954943
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -136,6 +139,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 4368516027511168310, guid: 3cf0ed2b0a237e84badd3dbc7a7d6b9a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5b53017da54a1f4418d9464613c6fb82, type: 3}
     - target: {fileID: 4509151772618998579, guid: 3cf0ed2b0a237e84badd3dbc7a7d6b9a, type: 3}
       propertyPath: m_Pivot.x
       value: 0

@@ -15,7 +15,12 @@ public class InventoryTetrisAssets : MonoBehaviour {
 
     public ItemTetrisSO box;
     public ItemTetrisSO post;
-    //public ItemTetrisSO shovel;
+    public ItemTetrisSO shovel;
+    public ItemTetrisSO Pick;
+    public ItemTetrisSO Rake;
+    public ItemTetrisSO Homi;
+    public ItemTetrisSO TV;
+    public ItemTetrisSO Refrigerator;
 
     public ItemTetrisSO GetItemTetrisSOFromName(string itemTetrisSOName) {
         foreach (ItemTetrisSO itemTetrisSO in itemTetrisSOArray) {

@@ -16,12 +16,18 @@ public class EnemyMove : MonoBehaviour
     }
     private EnemyPoolable enemyPoolable;
    public bool _isMoveRight;
-
+   private Animator anim;
     void Start()
     {
         gridTransform = transform.position;
         enemyPoolable = gameObject.GetComponent<EnemyPoolable>();
         GetPlayerSpeed = GameObject.Find("backG").GetComponent<GridMove>();
+        anim = gameObject.GetComponent<Animator>();
+       
+        if(_isMoveRight)
+        anim.SetTrigger("Right");
+        else
+        anim.SetTrigger("Left");
     }
 
     // Update is called once per frame
@@ -51,8 +57,7 @@ public class EnemyMove : MonoBehaviour
 
                     break;
             }
-
-            Debug.Log(MoveX);
+            
             transform.position = new Vector2(transform.position.x + MoveX, transform.position.y + MoveDown);
         }
     }

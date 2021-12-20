@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a8881de81c723447ba5f47d93cba053, type: 3}
+  m_Name: BoxSo
+  m_EditorClassIdentifier: 
+  itemname: "\uC637"
+  prefab: {fileID: 6755215729752791101, guid: 205c04888830b87439096833cb6912ac, type: 3}
+  visual: {fileID: 4509151772618998579, guid: 3cf0ed2b0a237e84badd3dbc7a7d6b9a, type: 3}
+  width: 2
+  height: 2
+  weight: 4
+  creatItemPoint: {x: 2, y: 2}
+  itemMoney: 2000

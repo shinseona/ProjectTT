@@ -27,7 +27,6 @@ public class GridMove : MonoBehaviour
         if (gridMove)
         {
             Speedbar.fillAmount = playerMoveSpeed / 6.0f;
-            Debug.Log(playerMoveSpeed);
             if (playerMoveSpeed < 4.0f)
             {
                 playerMoveSpeed += 1f* Time.deltaTime;

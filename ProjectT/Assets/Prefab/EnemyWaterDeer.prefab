@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3165566613315854779}
   - component: {fileID: 8330009655892602190}
   - component: {fileID: 5019797739808874644}
+  - component: {fileID: -1742673663788176479}
   m_Layer: 0
   m_Name: EnemyWaterDeer
   m_TagString: Enemy
@@ -97,7 +98,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2abecc76a982ca4ea3fa1c8edf688bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerMoveSpeed: 2
   _isMoveRight: 0
 --- !u!114 &8330009655892602190
 MonoBehaviour:
@@ -138,3 +138,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.98, y: 0.98}
   m_EdgeRadius: 0
+--- !u!95 &-1742673663788176479
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3165566613315854782}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 05e2def37ab437f48a2c2374fbeb86c6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

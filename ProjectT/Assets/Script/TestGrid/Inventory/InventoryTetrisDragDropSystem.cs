@@ -41,10 +41,10 @@ public class InventoryTetrisDragDropSystem : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            dir = PlacedObjectTypeSO.GetNextDir(dir);
-        }
+        //if (Input.GetKeyDown(KeyCode.R))
+        //{
+        //    dir = PlacedObjectTypeSO.GetNextDir(dir);
+        //}
 
         if (draggingPlacedObject != null)
         {

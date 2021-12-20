@@ -41,3 +41,5 @@ public class ItemCreater : MonoBehaviour
         creatItemInfo.NPCName = shippingAddressData[shippingAddressRandom]["npcName"].ToString();
     }
 }
+
+

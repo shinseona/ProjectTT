@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a8881de81c723447ba5f47d93cba053, type: 3}
+  m_Name: TVSo
+  m_EditorClassIdentifier: 
+  itemname: 
+  prefab: {fileID: 3635064630652746339, guid: 2f5db5091086b754285eb33b78abd223, type: 3}
+  visual: {fileID: 7556237369495112832, guid: 3b1b126557eb9124dac1b8c416edcf24, type: 3}
+  width: 3
+  height: 2
+  weight: 6
+  creatItemPoint: {x: 1, y: 3}
+  itemMoney: 3000

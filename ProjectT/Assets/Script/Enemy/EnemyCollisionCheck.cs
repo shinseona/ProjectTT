@@ -48,13 +48,11 @@ public class EnemyCollisionCheck : MonoBehaviour
                 PlayerHp -= 10;
                 Hpbar.fillAmount = (float) PlayerHp / 100;
                 hpCount.SetText(PlayerHp.ToString());
-                Debug.Log("playerHp:" + PlayerHp);
 
 
                 if (PlayerHp <= 0)
                 {
                     playerInventory.itemList = new List<ItemInfo>();
-                    Debug.Log("Game Over");
                     udb.PlayerisMotorcycle = false;
                     StartCoroutine(fader.FadeInActiveate(fader, "step1"));
                 }
@@ -74,7 +72,6 @@ public class EnemyCollisionCheck : MonoBehaviour
                 if (PlayerHp <= 0)
                 {
                     playerInventory.itemList = new List<ItemInfo>();
-                    Debug.Log("Game Over");
                     udb.PlayerisMotorcycle = false;
                     StartCoroutine(fader.FadeInActiveate(fader, "step1"));
                 }

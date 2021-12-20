@@ -66,7 +66,14 @@ public class LoadManager : MonoBehaviour
             udb.Month = Int32.Parse(loadfile[0]["month"].ToString());
             udb.Money = Int32.Parse(loadfile[0]["money"].ToString());
             iteminof.Playercoin = udb.Money;
-            udb.PlayerGenderMale = loadfile[0]["playerGenderMale"].IsBoolean;
+            if (loadfile[0]["playerGenderMale"].ToString() == "True")
+            {
+                udb.PlayerGenderMale = true;
+            }
+            else
+            {
+                udb.PlayerGenderMale = false;
+            }
             udb.SaveFileNum = SaveFileNum;
             StartCoroutine(fader.FadeInActiveate(fader, "step1"));
         }
@@ -82,7 +89,7 @@ public class LoadManager : MonoBehaviour
         nameinput.SetText(loadfile[0]["name"].ToString());
         Dateinput.SetText(loadfile[0]["month"].ToString()+"¿ù "+loadfile[0]["day"].ToString()+"ÀÏ");
         moneyinput.SetText(loadfile[0]["money"].ToString());
-        if (loadfile[0]["playerGenderMale"].IsBoolean)
+        if (loadfile[0]["playerGenderMale"].ToString()=="True")
         {
             ma.SetActive(true);
             fe.SetActive(false);

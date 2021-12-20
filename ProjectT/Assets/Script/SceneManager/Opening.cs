@@ -21,7 +21,7 @@ public class Opening : MonoBehaviour
     public void LodeButten()
     {
         BackendReturnObject bro = Backend.BMember.GetUserInfo();
-        Debug.Log(bro.GetReturnValuetoJSON()["row"]["gamerId"]);
+        //Debug.Log(bro.GetReturnValuetoJSON()["row"]["gamerId"]);
     }
     // Update is called once per frame
     public void QuitButten()

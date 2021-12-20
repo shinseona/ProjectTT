@@ -55,6 +55,7 @@ public class PlacedObjectTypeSO : ScriptableObject {
     public int height;
     public int weight;
     public Vector2Int creatItemPoint;
+    public int itemMoney;
 
     public int GetRotationAngle(Dir dir) {
         switch (dir) {

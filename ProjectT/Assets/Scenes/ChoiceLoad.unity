@@ -494,9 +494,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 966237186396976824, guid: a536d6c80a4ee674f856cfe0eca4b7d8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2205945515056137631, guid: a536d6c80a4ee674f856cfe0eca4b7d8, type: 3}
       propertyPath: SaveFileNum
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2454735655275617361, guid: a536d6c80a4ee674f856cfe0eca4b7d8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3284587736483234585, guid: a536d6c80a4ee674f856cfe0eca4b7d8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3779410063873507810, guid: a536d6c80a4ee674f856cfe0eca4b7d8, type: 3}
       propertyPath: m_Pivot.x
@@ -586,6 +598,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 4307491180474468922, guid: a536d6c80a4ee674f856cfe0eca4b7d8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6191067278660368848, guid: a536d6c80a4ee674f856cfe0eca4b7d8, type: 3}
       propertyPath: SaveFileNum
       value: 2
@@ -593,6 +609,14 @@ PrefabInstance:
     - target: {fileID: 6557151789534285171, guid: a536d6c80a4ee674f856cfe0eca4b7d8, type: 3}
       propertyPath: SaveFileNum
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7917101488849380727, guid: a536d6c80a4ee674f856cfe0eca4b7d8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9153027739940674876, guid: a536d6c80a4ee674f856cfe0eca4b7d8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a536d6c80a4ee674f856cfe0eca4b7d8, type: 3}

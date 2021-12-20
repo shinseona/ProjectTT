@@ -3,14 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 public class ButtonController : MonoBehaviour
 {
     [Header("Opening")]
     public Button openingLoding;
     public Button openingMenuStart;
     public Button openingMenuStop;
-    public Dropdown openingResolutionDropDown;
-    public Toggle openingFullscreenButten;
     public Button openingMenuConfirm;
     public GameObject openingMenuTap;
 
@@ -22,19 +21,23 @@ public class ButtonController : MonoBehaviour
     public Button stepOneSave;
     public Button stepOneMenuStart;
     public Button stepOneMenuStop;
-    public Dropdown stepOneResolutionDropDown;
-    public Toggle stepOneFullscreenButten;
     public Button stepOneMenuConfirm;
     public GameObject stepOneMenuTap;
     public Button GoingHome;
 
     GameObject gameManager;
     MenuMangaer menuManger;
+    private BGMmanager bgmManager;
+    public Toggle BGMmute;
+    public Slider BGMNum;
     void Start()
     {
         gameManager = GameObject.Find("GameManager");
         menuManger = gameManager.transform.GetChild(4).GetComponent<MenuMangaer>();
+        bgmManager = GameObject.Find("BGMmanager").GetComponent<BGMmanager>();
 
+        BGMNum.value= bgmManager.bgm.volume;
+        BGMmute.isOn = !bgmManager.bgm.mute;
         if (SceneManager.GetActiveScene().name == "Opening")
         {
             Opening();
@@ -47,34 +50,45 @@ public class ButtonController : MonoBehaviour
         }
   
     }
+
+    //public void WinSizeUP()
+    //{
+    //    if (menuManger.sizeOptionNum < menuManger.screenSizes.Count-1)
+    //    {
+    //        menuManger.sizeOptionNum += 1;
+    //    }
+    //    else
+    //    {
+    //        menuManger.sizeOptionNum = 0;
+
+    //    }
+
+    //    WinSizeText.SetText(menuManger.screenSizes[menuManger.sizeOptionNum].width.ToString() + "X" +
+    //                        menuManger.screenSizes[menuManger.sizeOptionNum].height.ToString());
+    //}
+    //public void WinSizeDown()
+    //{
+    //    if (menuManger.sizeOptionNum > 0)
+    //    {
+    //        menuManger.sizeOptionNum -= 1;
+    //    }
+    //    else
+    //    {
+    //        menuManger.sizeOptionNum = menuManger.screenSizes.Count-1;
+
+    //    }
+
+    //    WinSizeText.SetText(menuManger.screenSizes[menuManger.sizeOptionNum].width.ToString() + "X" +
+    //                        menuManger.screenSizes[menuManger.sizeOptionNum].height.ToString());
+    //}
     private void Opening()
     {
         menuManger.MenuTap = openingMenuTap;
         
         openingMenuStart.onClick.AddListener(menuManger.StartMenu);
         openingMenuStop.onClick.AddListener(menuManger.StopMenu);
-        openingResolutionDropDown.onValueChanged.AddListener(menuManger.DropboxOptionChange);
-        openingFullscreenButten.onValueChanged.AddListener(menuManger.FullScreenChange);
         openingMenuConfirm.onClick.AddListener(menuManger.MenuConfirm);
 
-        openingResolutionDropDown.options.Clear();
-        int optionNum = 0;
-        foreach(ScreenSize item in menuManger.screenSizes)
-        {
-            Dropdown.OptionData option = new Dropdown.OptionData();
-            option.text = item.width + "x" + item.height;
-            //option.text = item.width + "x" + item.height+ " "+item.refreshRate+"hz";
-            openingResolutionDropDown.options.Add(option);
-            if(item.width == Screen.width&&item.height==Screen.height)
-            {
-                openingResolutionDropDown.value = optionNum;
-            }
-            optionNum++;
-        }
-        openingResolutionDropDown.RefreshShownValue();
-        openingFullscreenButten.isOn = Screen.fullScreenMode.Equals(FullScreenMode.FullScreenWindow) ? true : false;
-        
-        Debug.Log("오프닝 버튼 초기화");
     }
     private void StepOne()
     {
@@ -82,28 +96,18 @@ public class ButtonController : MonoBehaviour
         
         stepOneMenuStart.onClick.AddListener(menuManger.StartMenu);
         stepOneMenuStop.onClick.AddListener(menuManger.StopMenu);
-        stepOneResolutionDropDown.onValueChanged.AddListener(menuManger.DropboxOptionChange);
-        stepOneFullscreenButten.onValueChanged.AddListener(menuManger.FullScreenChange);
         stepOneMenuConfirm.onClick.AddListener(menuManger.MenuConfirm);
         GoingHome.onClick.AddListener(menuManger.GoHome);
 
-        stepOneResolutionDropDown.options.Clear();
-        int optionNum = 0;
-        foreach (ScreenSize item in menuManger.screenSizes)
-        {
-            Dropdown.OptionData option = new Dropdown.OptionData();
-            option.text = item.width + "x" + item.height;
-            //option.text = item.width + "x" + item.height+ " "+item.refreshRate+"hz";
-            stepOneResolutionDropDown.options.Add(option);
-            if (item.width == Screen.width && item.height == Screen.height)
-            {
-                stepOneResolutionDropDown.value = optionNum;
-            }
-            optionNum++;
-        }
-        stepOneResolutionDropDown.RefreshShownValue();
-        stepOneFullscreenButten.isOn = Screen.fullScreenMode.Equals(FullScreenMode.FullScreenWindow) ? true : false;
+    }
 
-        Debug.Log("1번 씬 버튼 초기화");
+    public void BgmSet()
+    {
+        bgmManager.bgm.mute = !BGMmute.isOn;
+    }
+
+    public void BgmSoundPower()
+    {
+        bgmManager.bgm.volume = BGMNum.value;
     }
 }

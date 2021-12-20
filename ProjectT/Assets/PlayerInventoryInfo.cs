@@ -42,7 +42,7 @@ public class PlayerInventoryInfo : MonoBehaviour
         {
             if (itemList[i].ShippingAddress == _addr)
             {
-                coin += 1000;
+                coin += itemList[i].ItemSo.itemMoney;
                 
                 var temp = itemList[i];
                 itemList.Remove(itemList[i]);
@@ -68,12 +68,10 @@ public class PlayerInventoryInfo : MonoBehaviour
                     itemList = null;
                     itemList = new List<ItemInfo>();
                     itemWeight = 0;
-                    Debug.Log(itemWeight);
                     break;
                 }
                 itemWeight -= _iteminfo.ItemSo.weight;
                 itemList.Remove(a);
-                Debug.Log("itemWeight : "+itemWeight);
                 break;
             }
         }

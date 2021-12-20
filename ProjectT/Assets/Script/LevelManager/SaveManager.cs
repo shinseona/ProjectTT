@@ -38,7 +38,6 @@ public class SaveManager : MonoBehaviour
 
         File.WriteAllText(Application.dataPath + "/Resources/" + "Save" + udb.SaveFileNum + ".json",
             addressJson.ToString());
-        Debug.Log("저장되었습니다.");
     }
     public void SaveButton()
     {

@@ -16,22 +16,28 @@ public class MenuMangaer : MonoBehaviour
     public List<ScreenSize> screenSizes = new List<ScreenSize>();
     public List<int> resolution_hz = new List<int>();
     public FadeManager fader;
-
+    public int sizeOptionNum;
     public int resolutionNum;
     private void Awake()
     {
-        resolution.AddRange(Screen.resolutions);
-        resolution = resolution.ToList();
-        foreach(var a in resolution)
-        {
-            ScreenSize c = new ScreenSize();
-            c.width = a.width;
-            c.height = a.height;
+        //resolution.AddRange(Screen.resolutions);
+        //resolution = resolution.ToList();
+        //for (int i = 0; i < resolution.Count; i++)
+        //{
+        //    if (resolution[i].width > 1919)
+        //    {
+        //        ScreenSize c = new ScreenSize();
+        //        c.width = resolution[i].width;
+        //        c.height = resolution[i].height;
 
-            screenSizes.Add(c);
-        }
-        screenSizes = screenSizes.ToList();
-
+        //        screenSizes.Add(c);
+        //        if (resolution[i].width == Screen.width && resolution[i].height == Screen.height)
+        //        {
+        //            sizeOptionNum = i;
+        //        }
+        //    }
+        //}
+        //screenSizes = screenSizes.ToList();
     }
 
     void Start()
@@ -45,9 +51,6 @@ public class MenuMangaer : MonoBehaviour
     }
     public void MenuConfirm()
     {
-        Screen.SetResolution(screenSizes[resolutionNum].width,
-            screenSizes[resolutionNum].height,
-            screenMode);
         MenuTap.SetActive(false);
     }
     public void FullScreenChange(bool _isFull)
@@ -56,13 +59,11 @@ public class MenuMangaer : MonoBehaviour
     }
     public void StartMenu()
     {
-        MenuTap.SetActive(true);
-        Debug.Log("메뉴 시작");
+        MenuTap.SetActive(!MenuTap.activeSelf);
     }
     public void StopMenu()
     {
         MenuTap.SetActive(false);
-        Debug.Log("메뉴 종료");
     }
 
     public void GoHome()
