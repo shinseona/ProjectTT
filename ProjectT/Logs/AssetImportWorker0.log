@@ -15,11 +15,11 @@ D:/ProjectTT/ProjectTT/ProjectT
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-51078
+65499
 Successfully changed project path to: D:/ProjectTT/ProjectTT/ProjectT
 D:/ProjectTT/ProjectTT/ProjectT
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 138.03 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 138.04 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.14f1 (d0d1bb862f9d)
 [Subsystems] Discovering subsystems at path D:/unity file/2020.3.14f1/Editor/Data/Resources/UnitySubsystems
@@ -35,73 +35,73 @@ Initialize mono
 Mono path[0] = 'D:/unity file/2020.3.14f1/Editor/Data/Managed'
 Mono path[1] = 'D:/unity file/2020.3.14f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'D:/unity file/2020.3.14f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56412
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56108
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: D:/unity file/2020.3.14f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.001625 seconds.
+Registered in 0.001669 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 111.98 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 120.63 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  2.408 seconds
+- Completed reload, in  2.361 seconds
 Domain Reload Profiling:
-	ReloadAssembly (2408ms)
+	ReloadAssembly (2362ms)
 		BeginReloadAssembly (73ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (515ms)
-			LoadAssemblies (72ms)
+		EndReloadAssembly (517ms)
+			LoadAssemblies (71ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (160ms)
+			SetupTypeCache (154ms)
 			ReleaseScriptCaches (0ms)
 			RebuildScriptCaches (37ms)
-			SetupLoadedEditorAssemblies (242ms)
+			SetupLoadedEditorAssemblies (250ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (4ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (112ms)
-				BeforeProcessingInitializeOnLoad (15ms)
-				ProcessInitializeOnLoadAttributes (82ms)
-				ProcessInitializeOnLoadMethodAttributes (28ms)
+				RefreshPlugins (121ms)
+				BeforeProcessingInitializeOnLoad (14ms)
+				ProcessInitializeOnLoadAttributes (83ms)
+				ProcessInitializeOnLoadMethodAttributes (27ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.011257 seconds.
+Registered in 0.012183 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 120.27 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 135.69 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.347 seconds
+- Completed reload, in  1.449 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1348ms)
-		BeginReloadAssembly (154ms)
+	ReloadAssembly (1450ms)
+		BeginReloadAssembly (170ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (5ms)
+			DisableScriptedObjects (6ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (19ms)
-		EndReloadAssembly (1136ms)
-			LoadAssemblies (110ms)
+			CreateAndSetChildDomain (23ms)
+		EndReloadAssembly (1213ms)
+			LoadAssemblies (127ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (339ms)
+			SetupTypeCache (382ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (75ms)
-			SetupLoadedEditorAssemblies (477ms)
+			RebuildScriptCaches (74ms)
+			SetupLoadedEditorAssemblies (504ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (4ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (120ms)
-				BeforeProcessingInitializeOnLoad (86ms)
-				ProcessInitializeOnLoadAttributes (247ms)
-				ProcessInitializeOnLoadMethodAttributes (17ms)
+				RefreshPlugins (136ms)
+				BeforeProcessingInitializeOnLoad (101ms)
+				ProcessInitializeOnLoadAttributes (244ms)
+				ProcessInitializeOnLoadMethodAttributes (16ms)
 				AfterProcessingInitializeOnLoad (3ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
@@ -109,15 +109,15 @@ Domain Reload Profiling:
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.07 seconds
-Refreshing native plugins compatible for Editor in 1.41 ms, found 4 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
+Refreshing native plugins compatible for Editor in 1.43 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 2439 Unused Serialized files (Serialized files now loaded: 0)
 System memory in use before: 116.5 MB.
 System memory in use after: 116.6 MB.
 
 Unloading 50 unused Assets to reduce memory usage. Loaded Objects now: 2860.
-Total: 2.584500 ms (FindLiveObjects: 0.265700 ms CreateObjectMapping: 0.108100 ms MarkObjects: 2.075900 ms  DeleteObjects: 0.133500 ms)
+Total: 2.513400 ms (FindLiveObjects: 0.250200 ms CreateObjectMapping: 0.109200 ms MarkObjects: 2.021300 ms  DeleteObjects: 0.131700 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -131,9 +131,169 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  path: Assets/Seonah/CL_v1.11/Sliced
-  artifactKey: Guid(9115adff2a4ec7c4eaa2a9198ed54080) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Seonah/CL_v1.11/Sliced using Guid(9115adff2a4ec7c4eaa2a9198ed54080) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6d0fd5f77ee1cca190a07654b1164844') in 0.009369 seconds 
-  Import took 0.013858 seconds .
+  path: Assets/Seonah/Example/2D Hand Painted - Grassland Tileset/Tilemaps/Grassland@64x64_5.asset
+  artifactKey: Guid(dd50fda46a660d6478482c5edc7e3a65) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Seonah/Example/2D Hand Painted - Grassland Tileset/Tilemaps/Grassland@64x64_5.asset using Guid(dd50fda46a660d6478482c5edc7e3a65) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4ce0591bde8898b182e13dfafd30d5aa') in 0.109407 seconds 
+  Import took 0.113568 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000351 seconds.
+  path: Assets/Seonah/Example/2D Hand Painted - Grassland Tileset/Tilemaps/Grassland@64x64_3.asset
+  artifactKey: Guid(e7952a124b405e04da0ff654dc98523d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Seonah/Example/2D Hand Painted - Grassland Tileset/Tilemaps/Grassland@64x64_3.asset using Guid(e7952a124b405e04da0ff654dc98523d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8ca2806b46bc539c39f628888bd15462') in 0.016104 seconds 
+  Import took 0.020498 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000345 seconds.
+  path: Assets/Seonah/Example/2D Hand Painted - Grassland Tileset/Tilemaps/Grassland@64x64_4.asset
+  artifactKey: Guid(f4ff55c1b66f06444b8c574deb094a96) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Seonah/Example/2D Hand Painted - Grassland Tileset/Tilemaps/Grassland@64x64_4.asset using Guid(f4ff55c1b66f06444b8c574deb094a96) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0cb604ff34a203caca2d922e34da9473') in 0.014218 seconds 
+  Import took 0.018021 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000339 seconds.
+  path: Assets/Seonah/Example/2D Hand Painted - Grassland Tileset/Tilemaps/Grassland@64x64_6.asset
+  artifactKey: Guid(44af5458ee5f3864b8f1c0c4190b25fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Seonah/Example/2D Hand Painted - Grassland Tileset/Tilemaps/Grassland@64x64_6.asset using Guid(44af5458ee5f3864b8f1c0c4190b25fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '63c5992cb1b50c816599df1d6365a0fa') in 0.012083 seconds 
+  Import took 0.015855 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000335 seconds.
+  path: Assets/Seonah/Example/2D Hand Painted - Grassland Tileset/Tilemaps/Grassland@64x64_1.asset
+  artifactKey: Guid(d268d31017a592f40ba932f60c674318) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Seonah/Example/2D Hand Painted - Grassland Tileset/Tilemaps/Grassland@64x64_1.asset using Guid(d268d31017a592f40ba932f60c674318) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd6d8034f400c11020a624d9ae953484e') in 0.012873 seconds 
+  Import took 0.016661 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000343 seconds.
+  path: Assets/Seonah/Example/2D Hand Painted - Grassland Tileset/Tilemaps/Grassland@64x64_8.asset
+  artifactKey: Guid(15836d76e01d6ae41820320d81b70787) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Seonah/Example/2D Hand Painted - Grassland Tileset/Tilemaps/Grassland@64x64_8.asset using Guid(15836d76e01d6ae41820320d81b70787) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9b823943e31f0a6b50d2236ed3312317') in 0.012318 seconds 
+  Import took 0.016193 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000356 seconds.
+  path: Assets/Seonah/Example/2D Hand Painted - Grassland Tileset/Tilemaps/Grassland@64x64_2.asset
+  artifactKey: Guid(662054e6040dad34ba62b721c5d15c7f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Seonah/Example/2D Hand Painted - Grassland Tileset/Tilemaps/Grassland@64x64_2.asset using Guid(662054e6040dad34ba62b721c5d15c7f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd498680178b1bd1770bba53c2b930b8d') in 0.012824 seconds 
+  Import took 0.016712 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000345 seconds.
+  path: Assets/Seonah/Example/2D Hand Painted - Grassland Tileset/Tilemaps/Grassland@64x64_7.asset
+  artifactKey: Guid(90dc292f11414214ca5e6a2ad0a938f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Seonah/Example/2D Hand Painted - Grassland Tileset/Tilemaps/Grassland@64x64_7.asset using Guid(90dc292f11414214ca5e6a2ad0a938f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '495db431658d2049dd873ab04a51526f') in 0.012649 seconds 
+  Import took 0.016758 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000358 seconds.
+  path: Assets/Seonah/Example/2D Hand Painted - Grassland Tileset/Tilemaps/Grassland@64x64_0.asset
+  artifactKey: Guid(9a0c9612ef72e354a91353fa28a1c126) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Seonah/Example/2D Hand Painted - Grassland Tileset/Tilemaps/Grassland@64x64_0.asset using Guid(9a0c9612ef72e354a91353fa28a1c126) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a2e5661e0b5360d9f7f5d3085ec1834b') in 0.012199 seconds 
+  Import took 0.016700 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 60.617794 seconds.
+  path: Assets/Seonah/new/Grassland@64x64_0.asset
+  artifactKey: Guid(3796992ef8cb184429412c2b4894a514) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Seonah/new/Grassland@64x64_0.asset using Guid(3796992ef8cb184429412c2b4894a514) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '883e4e8e2b6b63ee5ffc18fcca04b315') in 0.022172 seconds 
+  Import took 0.027082 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000331 seconds.
+  path: Assets/Seonah/new/Grassland@64x64_3.asset
+  artifactKey: Guid(4b9d570829067cf42b159c3f38f396c6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Seonah/new/Grassland@64x64_3.asset using Guid(4b9d570829067cf42b159c3f38f396c6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '947b2272ddd8dc8b6239c2f5afd825a6') in 0.017698 seconds 
+  Import took 0.022142 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000319 seconds.
+  path: Assets/Seonah/new/Grassland@64x64_6.asset
+  artifactKey: Guid(c885792f450b6064ead50288ec0788cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Seonah/new/Grassland@64x64_6.asset using Guid(c885792f450b6064ead50288ec0788cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4255c605da585bd4d6d4bd5449015da3') in 0.014068 seconds 
+  Import took 0.017884 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000305 seconds.
+  path: Assets/Seonah/new/Grassland@64x64_2.asset
+  artifactKey: Guid(5a5478fc15a7c8b40bf8ae69166b3d36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Seonah/new/Grassland@64x64_2.asset using Guid(5a5478fc15a7c8b40bf8ae69166b3d36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '75ee21b55ee213ec783755f754d044c7') in 0.014911 seconds 
+  Import took 0.019952 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000297 seconds.
+  path: Assets/Seonah/new/Grassland@64x64_5.asset
+  artifactKey: Guid(77c780c8485d7034da983f53499cb2ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Seonah/new/Grassland@64x64_5.asset using Guid(77c780c8485d7034da983f53499cb2ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '101c9626d98e119f38140977422e87d8') in 0.009818 seconds 
+  Import took 0.014107 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000375 seconds.
+  path: Assets/Seonah/new/Grassland@64x64_1.asset
+  artifactKey: Guid(dd3d14affab3b69468c4e3363dfc09d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Seonah/new/Grassland@64x64_1.asset using Guid(dd3d14affab3b69468c4e3363dfc09d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bab5e812393049caa384c7972293d14d') in 0.014476 seconds 
+  Import took 0.019077 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000294 seconds.
+  path: Assets/Seonah/new/Grassland@64x64_4.asset
+  artifactKey: Guid(7144331056c6a0047893eca057fcd3bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Seonah/new/Grassland@64x64_4.asset using Guid(7144331056c6a0047893eca057fcd3bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fa547674d9ff696aec21bf5028c77bc0') in 0.016897 seconds 
+  Import took 0.020924 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 55.916286 seconds.
+  path: Assets/Seonah/new/Grassland@64x64_7.asset
+  artifactKey: Guid(2e0262d49f4014d439a628c32f488de2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Seonah/new/Grassland@64x64_7.asset using Guid(2e0262d49f4014d439a628c32f488de2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '480cbde1f7899b7a56c16032ee0a7515') in 0.019613 seconds 
+  Import took 0.024860 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.005584 seconds.
+  path: Assets/Seonah/new/Grassland@64x64_7.asset
+  artifactKey: Guid(2e0262d49f4014d439a628c32f488de2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Seonah/new/Grassland@64x64_7.asset using Guid(2e0262d49f4014d439a628c32f488de2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '480cbde1f7899b7a56c16032ee0a7515') in 0.015264 seconds 
+  Import took 0.019648 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2302.933133 seconds.
+  path: Assets/Scenes/MainGame.unity
+  artifactKey: Guid(992a0117650333d46bc43f52e687f48e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/MainGame.unity using Guid(992a0117650333d46bc43f52e687f48e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a7e2bfa4643f3377c9a1954d3e811b58') in 0.008257 seconds 
+  Import took 0.014197 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 120.449828 seconds.
+  path: Assets/Seonah/Materials/architecture7.mat
+  artifactKey: Guid(c0b98d1688550e74bb2c14c1dd9654bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Seonah/Materials/architecture7.mat using Guid(c0b98d1688550e74bb2c14c1dd9654bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e8aa53fd46357639ee9d2a869150ae65') in 0.102130 seconds 
+  Import took 0.107073 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000321 seconds.
+  path: Assets/Seonah/Materials/inventory5.png
+  artifactKey: Guid(126f81b9370afe145a6861ad279f0f7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Seonah/Materials/inventory5.png using Guid(126f81b9370afe145a6861ad279f0f7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8f03ecdc27c823f1b69fe649018b7e4c') in 0.092785 seconds 
+  Import took 0.097121 seconds .
 
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file

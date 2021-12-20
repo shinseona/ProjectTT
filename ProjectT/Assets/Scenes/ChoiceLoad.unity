@@ -494,6 +494,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 463760133746041731, guid: a536d6c80a4ee674f856cfe0eca4b7d8, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 126f81b9370afe145a6861ad279f0f7d, type: 3}
+    - target: {fileID: 463760133746041731, guid: a536d6c80a4ee674f856cfe0eca4b7d8, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 463760133746041731, guid: a536d6c80a4ee674f856cfe0eca4b7d8, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 463760133746041731, guid: a536d6c80a4ee674f856cfe0eca4b7d8, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 966237186396976824, guid: a536d6c80a4ee674f856cfe0eca4b7d8, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -598,6 +614,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 3779410064524289624, guid: a536d6c80a4ee674f856cfe0eca4b7d8, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 126f81b9370afe145a6861ad279f0f7d, type: 3}
+    - target: {fileID: 3779410064524289624, guid: a536d6c80a4ee674f856cfe0eca4b7d8, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3779410064524289624, guid: a536d6c80a4ee674f856cfe0eca4b7d8, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3779410064524289624, guid: a536d6c80a4ee674f856cfe0eca4b7d8, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4307491180474468922, guid: a536d6c80a4ee674f856cfe0eca4b7d8, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -613,6 +645,22 @@ PrefabInstance:
     - target: {fileID: 7917101488849380727, guid: a536d6c80a4ee674f856cfe0eca4b7d8, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8709616233247646128, guid: a536d6c80a4ee674f856cfe0eca4b7d8, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 126f81b9370afe145a6861ad279f0f7d, type: 3}
+    - target: {fileID: 8709616233247646128, guid: a536d6c80a4ee674f856cfe0eca4b7d8, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8709616233247646128, guid: a536d6c80a4ee674f856cfe0eca4b7d8, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8709616233247646128, guid: a536d6c80a4ee674f856cfe0eca4b7d8, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9153027739940674876, guid: a536d6c80a4ee674f856cfe0eca4b7d8, type: 3}
       propertyPath: m_IsActive
